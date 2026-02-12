@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F9F8F6;
+  --background: #f9f8f6;
   /* Ivory */
-  --foreground: #1A2B3C;
+  --foreground: #1a2b3c;
   /* Navy */
 
-  --gold: #C5A059;
-  --gold-light: #E5D1B0;
-  --ivory: #F9F8F6;
-  --ivory-dark: #E8E4D8;
+  --gold: #c5a059;
+  --gold-light: #e5d1b0;
+  --ivory: #f9f8f6;
+  --ivory-dark: #e8e4d8;
 }
 
 @theme inline {

@@ -14,7 +14,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Mariage de Zineb & Basile",
-  description: "Invitation au mariage de Zineb Lahjouji et Basile Piquard - 10 Octobre 2026",
+  description:
+    "Invitation au mariage de Zineb Lahjouji et Basile Piquard - 10 Octobre 2026",
 };
 
 export default function RootLayout({

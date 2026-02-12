@@ -7,6 +7,7 @@
 - **Maps Link**: [Palais Tazi - Google Maps](https://maps.app.goo.gl/614jX38P2Xqfvvk69)
 
 ## Notes
+
 - Website must be in French.
 - Source for structure/style: https://boda-mar-jaume.lovable.app/
 - Remove background music.
