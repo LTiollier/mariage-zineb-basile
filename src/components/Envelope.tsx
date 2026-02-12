@@ -159,7 +159,7 @@ export const Envelope = ({ children }: { children: React.ReactNode }) => {
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ delay: 1.5, duration: 1.5 }}
-                                    className="absolute -bottom-16 left-1/2 -translate-x-1/2 text-center"
+                                    className="absolute -bottom-28 md:-bottom-16 left-1/2 -translate-x-1/2 text-center"
                                 >
                                     <p className="font-serif italic text-[#8b1d1d]/40 text-sm tracking-widest uppercase">
                                         Cliquez pour ouvrir
