@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   title: "Mariage de Zineb & Basile",
   description:
     "Invitation au mariage de Zineb Lahjouji et Basile Piquard - 10 Octobre 2026",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({
