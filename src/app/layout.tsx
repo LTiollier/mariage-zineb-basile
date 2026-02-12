@@ -22,6 +22,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { Envelope } from "@/components/Envelope";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -32,7 +34,7 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${inter.variable} font-sans antialiased`}
       >
-        {children}
+        <Envelope>{children}</Envelope>
       </body>
     </html>
   );
