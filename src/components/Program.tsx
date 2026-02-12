@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Church, Martini, Utensils, Music, Sparkles } from "lucide-react";
+import { MapPin, Church, Martini, Utensils, Music, Sparkles, Clock } from "lucide-react";
 
 const events = [
     {
@@ -75,27 +75,25 @@ export default function Program() {
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
                                 className="flex-shrink-0 w-[240px] md:w-1/5 flex flex-col items-center text-center snap-center relative"
                             >
-                                {/* Time Badge */}
-                                <div className="mb-6">
-                                    <div className="bg-navy/90 text-white text-[10px] font-bold px-4 py-1 rounded-full uppercase tracking-widest shadow-md">
-                                        {event.time}
-                                    </div>
-                                </div>
-
                                 {/* Icon Circle */}
-                                <div className="relative z-10 w-16 h-16 rounded-full bg-white border border-gold/30 flex items-center justify-center text-gold shadow-sm group-hover:bg-gold group-hover:text-white transition-all duration-500 mb-8">
+                                <div className="relative z-10 w-16 h-16 rounded-full bg-white border border-gold/30 flex items-center justify-center text-gold shadow-sm group-hover:bg-gold group-hover:text-white transition-all duration-500 mb-8 mt-12 md:mt-0">
                                     {event.icon}
                                 </div>
 
                                 {/* Content */}
-                                <div className="px-4 space-y-3">
+                                <div className="px-4 space-y-2">
                                     <h3 className="text-xl font-serif text-navy italic">
                                         {event.title}
                                     </h3>
+                                    {/* Time Below Title */}
+                                    <div className="flex items-center justify-center gap-1 text-gold/80 font-sans text-[10px] font-bold uppercase tracking-widest mb-3">
+                                        <Clock className="w-2.5 h-2.5" />
+                                        {event.time}
+                                    </div>
                                     <p className="text-navy/40 text-[10px] font-sans uppercase tracking-widest leading-relaxed line-clamp-2 italic">
                                         {event.description}
                                     </p>
-                                    <div className="flex items-center justify-center gap-1.5 text-navy/30 text-[9px] font-sans tracking-tighter uppercase italic">
+                                    <div className="flex items-center justify-center gap-1.5 text-navy/30 text-[9px] font-sans tracking-tighter uppercase italic pt-1">
                                         <MapPin className="w-2.5 h-2.5" />
                                         {event.location}
                                     </div>
