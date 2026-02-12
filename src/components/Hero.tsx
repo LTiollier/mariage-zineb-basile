@@ -6,16 +6,18 @@ import Image from "next/image";
 export default function Hero() {
     return (
         <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
-            {/* Background Image */}
+            {/* Background Video */}
             <div className="absolute inset-0 z-0">
-                <Image
-                    src="/reception.png"
-                    alt="Palais Tazi"
-                    fill
-                    className="object-cover brightness-75"
-                    priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-ivory/20" />
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="h-full w-full object-cover brightness-[0.7]"
+                >
+                    <source src="/hero_video.mp4" type="video/mp4" />
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-ivory/20" />
             </div>
 
             {/* Content */}
