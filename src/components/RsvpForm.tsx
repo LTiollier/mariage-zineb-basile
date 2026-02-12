@@ -35,19 +35,82 @@ export default function RsvpForm() {
     };
 
     if (isSubmitted) {
+        // Generate confetti particles
+        const particles = Array.from({ length: 30 }).map((_, i) => ({
+            id: i,
+            angle: (i * 360) / 30, // Evenly distributed or random
+            distance: 60 + Math.random() * 40, // 60-100px
+            size: 4 + Math.random() * 4, // 4-8px
+            color: ['#c5a059', '#1a2b3c', '#e5d5b0'][Math.floor(Math.random() * 3)], // Gold, Navy, Light Gold
+            delay: Math.random() * 0.2
+        }));
+
         return (
             <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="w-full max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-xl text-center border border-gold/20"
+                className="w-full max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-xl text-center border border-gold/20 relative overflow-hidden"
             >
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Check className="w-8 h-8 text-green-600" />
+                <div className="relative w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                    {/* Confetti Explosion */}
+                    {particles.map((p) => (
+                        <motion.div
+                            key={p.id}
+                            initial={{ x: 0, y: 0, opacity: 0, scale: 0 }}
+                            animate={{
+                                x: Math.cos(p.angle * Math.PI / 180) * p.distance,
+                                y: Math.sin(p.angle * Math.PI / 180) * p.distance,
+                                opacity: [0, 1, 0],
+                                scale: [0, 1, 0],
+                            }}
+                            transition={{
+                                duration: 0.8,
+                                ease: "easeOut",
+                                delay: 0.2 + p.delay,
+                                times: [0, 0.2, 1]
+                            }}
+                            className="absolute rounded-full"
+                            style={{
+                                width: p.size,
+                                height: p.size,
+                                backgroundColor: p.color
+                            }}
+                        />
+                    ))}
+
+                    {/* Animated Checkmark Circle */}
+                    <motion.div
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 0.5, ease: "backOut" }}
+                        className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center z-10"
+                    >
+                        {/* Drawing Checkmark SVG */}
+                        <svg width="40" height="40" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <motion.path
+                                d="M10 25 L22 37 L40 13"
+                                stroke="#16a34a" // green-600
+                                strokeWidth="5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                initial={{ pathLength: 0, opacity: 0 }}
+                                animate={{ pathLength: 1, opacity: 1 }}
+                                transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
+                            />
+                        </svg>
+                    </motion.div>
                 </div>
-                <h3 className="text-3xl font-serif text-[#1a2b3c] mb-4">Merci !</h3>
-                <p className="text-[#1a2b3c]/80 font-sans">
-                    Votre réponse a bien été enregistrée. Nous avons hâte de vous retrouver.
-                </p>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.6, duration: 0.5 }}
+                >
+                    <h3 className="text-3xl font-serif text-[#1a2b3c] mb-4">Merci !</h3>
+                    <p className="text-[#1a2b3c]/80 font-sans">
+                        Votre réponse a bien été enregistrée. Nous avons hâte de vous retrouver.
+                    </p>
+                </motion.div>
             </motion.div>
         );
     }
