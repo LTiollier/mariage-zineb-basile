@@ -3,6 +3,63 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const AnimatedBackground = () => {
+    // Generate deterministic values for particles based on their index
+    const particles = React.useMemo(() => Array.from({ length: 25 }).map((_, i) => ({
+        id: i,
+        // Spread particles across the screen
+        left: `${(i * 19) % 100}%`,
+        top: `${(i * 13) % 100}%`,
+        // Vary sizes significantly for visibility
+        size: (i % 5) * 2 + 6, // 6px to 14px
+        // Different animation durations and delays
+        duration: 15 + (i % 8),
+        delay: i * 0.3,
+    })), []);
+
+    return (
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            {/* Subtle Gradient Pulse - Slightly darker/visible */}
+            <motion.div
+                animate={{
+                    opacity: [0.3, 0.5, 0.5, 0.3],
+                }}
+                transition={{
+                    duration: 12,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                }}
+                className="absolute inset-0 bg-gradient-to-br from-[#f8f6f2] via-[#ebe5ce] to-[#f8f6f2]"
+            />
+
+            {/* Floating Particles */}
+            {particles.map((particle) => (
+                <motion.div
+                    key={particle.id}
+                    className="absolute rounded-full bg-[#c5a059]"
+                    style={{
+                        left: particle.left,
+                        top: particle.top,
+                        width: particle.size,
+                        height: particle.size,
+                    }}
+                    animate={{
+                        y: [-40, 40, -40],
+                        x: [-30, 30, -30],
+                        opacity: [0.1, 0.6, 0.1], // Higher max opacity
+                    }}
+                    transition={{
+                        duration: particle.duration,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: particle.delay,
+                    }}
+                />
+            ))}
+        </div>
+    );
+};
+
 export const Envelope = ({ children }: { children: React.ReactNode }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isAnimationComplete, setIsAnimationComplete] = useState(false);
@@ -45,6 +102,8 @@ export const Envelope = ({ children }: { children: React.ReactNode }) => {
                         }}
                         className="fixed inset-0 z-50 flex items-center justify-center bg-[#fdfcf8] perspective-[1500px]"
                     >
+                        <AnimatedBackground />
+
                         {/* The Envelope Container */}
                         <motion.div
                             layout
