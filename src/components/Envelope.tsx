@@ -107,6 +107,15 @@ export const Envelope = ({ children }: { children: React.ReactNode }) => {
                         {/* The Envelope Container */}
                         <motion.div
                             layout
+                            initial={{ y: 0 }}
+                            animate={{
+                                y: [0, -15, 0],
+                            }}
+                            transition={{
+                                duration: 6,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
                             style={{ transformStyle: "preserve-3d" }}
                             className="relative w-[90vw] max-w-[600px] aspect-[1.4/1] cursor-pointer"
                             onClick={handleOpen}
