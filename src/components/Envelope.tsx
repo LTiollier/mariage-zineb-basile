@@ -132,6 +132,29 @@ export const Envelope = ({ children }: { children: React.ReactNode }) => {
                                 }}
                             />
 
+                            {/* The Letter inside */}
+                            <div
+                                className="absolute inset-[5%] z-10 bg-[#fffdfa] rounded-sm shadow-md p-10 flex flex-col gap-6"
+                                style={{
+                                    backgroundImage: `url('https://www.transparenttextures.com/patterns/paper-fibers.png')`,
+                                }}
+                            >
+                                {/* Blurred writing lines to simulate the invitation */}
+                                <div className="space-y-4 pt-4">
+                                    <div className="w-3/4 h-2 bg-black/5 rounded-full blur-[1.5px]" />
+                                    <div className="w-full h-2 bg-black/5 rounded-full blur-[1.5px]" />
+                                    <div className="w-5/6 h-2 bg-black/5 rounded-full blur-[1.5px]" />
+                                    <div className="w-full h-2 bg-black/5 rounded-full blur-[1.5px]" />
+                                    <div className="w-4/5 h-2 bg-black/5 rounded-full blur-[1.5px]" />
+                                    <div className="w-2/3 h-2 bg-black/5 rounded-full blur-[1.5px]" />
+                                </div>
+
+                                {/* A small "seal" or signature area */}
+                                <div className="mt-auto flex justify-end">
+                                    <div className="w-16 h-16 bg-black/5 rounded-full blur-[2px]" />
+                                </div>
+                            </div>
+
                             {/* Top Flap (Lid) */}
                             <motion.div
                                 initial={{ rotateX: 0 }}
