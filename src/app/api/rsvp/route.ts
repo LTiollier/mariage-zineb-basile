@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
         sendSmtpEmail.params = {
             name,
             phone,
-            attendance,
+            attendance: attendance === "oui" ? "Oui, avec plaisir" : "Non, désolé",
             hasChildren: hasChildren || "non",
             childrenCount: childrenCount || "0",
             dietary: dietary || "Non",
