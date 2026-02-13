@@ -12,10 +12,12 @@ export default function RsvpForm() {
         hasChildren: "",
         childrenCount: "1",
         dietary: "Non",
+        website: "", // Honeypot field
     });
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [error, setError] = useState("");
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
@@ -25,13 +27,29 @@ export default function RsvpForm() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setError("");
 
-        // Simulate API call
-        await new Promise((resolve) => setTimeout(resolve, 1500));
+        try {
+            const response = await fetch("/api/rsvp", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
 
-        setIsSubmitting(false);
-        setIsSubmitted(true);
-        console.log("Form submitted:", formData);
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error || "Failed to submit RSVP");
+            }
+
+            setIsSubmitting(false);
+            setIsSubmitted(true);
+        } catch (err) {
+            setIsSubmitting(false);
+            setError(err instanceof Error ? err.message : "Une erreur est survenue");
+        }
     };
 
     if (isSubmitted) {
@@ -118,6 +136,24 @@ export default function RsvpForm() {
     return (
         <div className="w-full max-w-2xl mx-auto bg-white text-[#1a2b3c] p-6 md:p-10 rounded-2xl shadow-xl border border-gold/20">
             <form onSubmit={handleSubmit} className="space-y-8 text-left">
+                {/* Honeypot field - hidden from users, catches bots */}
+                <input
+                    type="text"
+                    name="website"
+                    value={formData.website}
+                    onChange={handleChange}
+                    style={{ position: 'absolute', left: '-9999px', width: 1, height: 1 }}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                />
+
+                {/* Error message */}
+                {error && (
+                    <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
+                        {error}
+                    </div>
+                )}
 
                 {/* Attendance */}
                 <div className="space-y-3">
