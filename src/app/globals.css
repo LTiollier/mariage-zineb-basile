@@ -20,6 +20,7 @@
   --color-gold-light: var(--gold-light);
   --color-ivory: var(--ivory);
   --color-ivory-dark: var(--ivory-dark);
+  --color-navy: var(--foreground);
 }
 
 body {
