@@ -96,9 +96,9 @@ export const Envelope = ({ children }: { children: React.ReactNode }) => {
                         initial={{ opacity: 1 }}
                         exit={{
                             opacity: 0,
-                            scale: 1.05,
-                            filter: "blur(10px)",
-                            transition: { duration: 1, ease: "easeInOut" }
+                            scale: 2, // Zoom significantly to feel like passing through
+                            filter: "blur(20px)", // More intense blur
+                            transition: { duration: 1.2, ease: "easeInOut" }
                         }}
                         className="fixed inset-0 z-50 flex items-center justify-center bg-[#fdfcf8] perspective-[1500px]"
                     >
@@ -270,12 +270,12 @@ export const Envelope = ({ children }: { children: React.ReactNode }) => {
             <motion.main
                 initial={false}
                 animate={{
-                    filter: !showSite ? "blur(20px)" : "blur(0px)",
-                    scale: !showSite ? 0.98 : 1,
+                    filter: !showSite ? "blur(30px)" : "blur(0px)",
+                    scale: !showSite ? 0.85 : 1, // Start from smaller scale for entrance
                     opacity: !showSite ? 0 : 1,
-                    y: !showSite ? 20 : 0
+                    y: !showSite ? 30 : 0
                 }}
-                transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
             >
                 {children}
             </motion.main>
