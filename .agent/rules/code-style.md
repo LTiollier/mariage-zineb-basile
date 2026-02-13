@@ -1,4 +1,8 @@
-# AGENTS.md - Wedding Invitation Project (Zineb & Basile)
+---
+trigger: always_on
+---
+
+# code-style.md - Wedding Invitation Project (Zineb & Basile)
 
 ## Project Overview
 
