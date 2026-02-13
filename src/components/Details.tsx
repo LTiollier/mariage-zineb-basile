@@ -2,8 +2,12 @@
 
 import { motion } from "framer-motion";
 import { Info, Map as MapIcon, Shirt } from "lucide-react";
+import { useState } from "react";
+import HotelModal from "./HotelModal";
 
 export default function Details() {
+  const [isHotelModalOpen, setIsHotelModalOpen] = useState(false);
+
   return (
     <section className="py-24 bg-ivory text-navy px-4">
       <div className="max-w-6xl mx-auto">
@@ -35,9 +39,16 @@ export default function Details() {
             icon={<Info className="w-6 h-6" />}
             title="Hébergement"
             content="De nombreux hôtels de charme sont situés à proximité du Palais Tazi. Nous vous recommandons de réserver à l'avance."
+            actionText="Voir notre sélection"
+            onActionClick={() => setIsHotelModalOpen(true)}
           />
         </div>
       </div>
+
+      <HotelModal
+        isOpen={isHotelModalOpen}
+        onClose={() => setIsHotelModalOpen(false)}
+      />
     </section>
   );
 }
@@ -48,12 +59,14 @@ function DetailCard({
   content,
   actionText,
   actionUrl,
+  onActionClick,
 }: {
   icon: React.ReactNode;
   title: string;
   content: string;
   actionText?: string;
   actionUrl?: string;
+  onActionClick?: () => void;
 }) {
   return (
     <motion.div
@@ -67,15 +80,26 @@ function DetailCard({
       <p className="text-navy/70 leading-relaxed font-sans text-sm">
         {content}
       </p>
-      {actionText && actionUrl && (
-        <a
-          href={actionUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-4 px-6 py-2 border border-gold text-gold hover:bg-gold hover:text-white transition-colors rounded-full text-sm font-sans uppercase tracking-widest"
-        >
-          {actionText}
-        </a>
+      {actionText && (
+        <>
+          {actionUrl ? (
+            <a
+              href={actionUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 px-6 py-2 border border-gold text-gold hover:bg-gold hover:text-white transition-colors rounded-full text-sm font-sans uppercase tracking-widest"
+            >
+              {actionText}
+            </a>
+          ) : (
+            <button
+              onClick={onActionClick}
+              className="mt-4 px-6 py-2 border border-gold text-gold hover:bg-gold hover:text-white transition-colors rounded-full text-sm font-sans uppercase tracking-widest cursor-pointer"
+            >
+              {actionText}
+            </button>
+          )}
+        </>
       )}
     </motion.div>
   );
