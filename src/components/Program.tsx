@@ -3,8 +3,7 @@
 import { motion } from "framer-motion";
 import {
   MapPin,
-  Church,
-  Martini,
+  Castle,
   Utensils,
   Music,
   Sparkles,
@@ -13,41 +12,27 @@ import {
 
 const events = [
   {
-    time: "17:00",
-    title: "Cérémonie Religieuse",
+    time: "16:00",
+    title: "Accueil des invités",
     location: "Palais Tazi",
-    description:
-      "Échange des vœux et signature du contrat dans le respect des traditions.",
-    icon: <Church className="w-6 h-6" />,
-  },
-  {
-    time: "17:30",
-    title: "Cocktail de Bienvenue",
-    location: "Les Jardins du Palais",
-    description:
-      "Rafraîchissements et musique traditionnelle en attendant la mariée.",
     icon: <Sparkles className="w-6 h-6" />,
   },
   {
-    time: "19:00",
-    title: "Cocktail",
-    location: "Les Jardins du Palais",
-    description: "Apéritifs et boissons dans les jardins au coucher du soleil.",
-    icon: <Martini className="w-6 h-6" />,
+    time: "18:00",
+    title: "Entrée des mariés & Cérémonie",
+    location: "Palais Tazi",
+    icon: <Castle className="w-6 h-6" />,
   },
   {
-    time: "20:30",
+    time: "22:00",
     title: "Dîner",
-    location: "Le Grand Hall",
-    description:
-      "Cena y celebración - Un festin royal pour célébrer notre union.",
+    location: "Palais Tazi",
     icon: <Utensils className="w-6 h-6" />,
   },
   {
-    time: "22:30",
-    title: "Soirée Dansante",
-    location: "La Salle de Bal",
-    description: "Festivités jusqu'au bout de la nuit pour fêter notre amour.",
+    time: "00:00",
+    title: "Prolongation de la soirée",
+    location: "Palais Tazi",
     icon: <Music className="w-6 h-6" />,
   },
 ];
@@ -66,6 +51,11 @@ export default function Program() {
           <h2 className="text-5xl md:text-6xl font-serif italic text-navy/80 tracking-tight">
             Programme du jour
           </h2>
+          <div className="flex items-center justify-center gap-3 text-gold font-serif italic text-xl">
+            <span className="w-12 h-[1px] bg-gold/20" />
+            10 Octobre 2026
+            <span className="w-12 h-[1px] bg-gold/20" />
+          </div>
           <p className="text-navy/40 text-sm font-sans uppercase tracking-[0.3em]">
             Ce que nous avons préparé pour vous
           </p>
@@ -84,7 +74,7 @@ export default function Program() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="flex-shrink-0 w-[240px] md:w-1/5 flex flex-col items-center text-center snap-center relative"
+                className="flex-shrink-0 w-[240px] md:w-1/4 flex flex-col items-center text-center snap-center relative"
               >
                 {/* Icon Circle */}
                 <div className="relative z-10 w-16 h-16 rounded-full bg-white border border-gold/30 flex items-center justify-center text-gold shadow-sm group-hover:bg-gold group-hover:text-white transition-all duration-500 mb-8 mt-12 md:mt-0">
@@ -101,9 +91,7 @@ export default function Program() {
                     <Clock className="w-2.5 h-2.5" />
                     {event.time}
                   </div>
-                  <p className="text-navy/40 text-[10px] font-sans uppercase tracking-widest leading-relaxed line-clamp-2 italic">
-                    {event.description}
-                  </p>
+
                   <div className="flex items-center justify-center gap-1.5 text-navy/30 text-[9px] font-sans tracking-tighter uppercase italic pt-1">
                     <MapPin className="w-2.5 h-2.5" />
                     {event.location}
