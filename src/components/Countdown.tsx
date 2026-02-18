@@ -46,13 +46,13 @@ export default function Countdown() {
         transition={{ duration: 0.8 }}
         className="text-center space-y-8"
       >
-        <h2 className="text-3xl md:text-4xl font-serif italic text-gold">
-          Compte à rebours
-        </h2>
-        <div className="grid grid-cols-4 gap-4 md:gap-10">
+        <div className="flex items-start justify-center gap-1 md:gap-3">
           <TimeUnit value={timeLeft.days} label="Jours" />
+          <Separator />
           <TimeUnit value={timeLeft.hours} label="Heures" />
+          <Separator />
           <TimeUnit value={timeLeft.minutes} label="Minutes" />
+          <Separator />
           <TimeUnit value={timeLeft.seconds} label="Secondes" />
         </div>
       </motion.div>
@@ -68,6 +68,16 @@ function TimeUnit({ value, label }: { value: number; label: string }) {
       </span>
       <span className="text-xs md:text-sm uppercase tracking-widest text-gold mt-2">
         {label}
+      </span>
+    </div>
+  );
+}
+
+function Separator() {
+  return (
+    <div className="flex flex-col items-center pb-6">
+      <span className="text-3xl md:text-5xl font-serif text-gold/60 leading-none select-none">
+        :
       </span>
     </div>
   );
