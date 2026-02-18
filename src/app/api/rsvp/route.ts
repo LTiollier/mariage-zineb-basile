@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
         }
 
         // Validate required fields
-        const { attendance, name, phone, hasChildren, childrenCount, dietary } = body;
+        const { attendance, name, email, phone, hasChildren, childrenCount, dietary } = body;
 
         if (!attendance || !name || !phone) {
             return NextResponse.json(
@@ -30,19 +30,7 @@ export async function POST(request: NextRequest) {
             process.env.BREVO_API_KEY || ""
         );
 
-        // Prepare email parameters
-        const sendSmtpEmail = new brevo.SendSmtpEmail();
-        sendSmtpEmail.sender = {
-            email: process.env.BREVO_SENDER_EMAIL || "",
-            name: process.env.BREVO_SENDER_NAME || "Mariage Zineb & Basile",
-        };
-        sendSmtpEmail.to = [
-            {
-                email: process.env.BREVO_RECIPIENT_EMAIL || "",
-            },
-        ];
-        sendSmtpEmail.templateId = 1; // Brevo template ID
-        sendSmtpEmail.params = {
+        const emailParams = {
             name,
             phone,
             attendance: attendance === "oui" ? "Oui, avec plaisir" : "Non, désolé",
@@ -51,8 +39,35 @@ export async function POST(request: NextRequest) {
             dietary: dietary || "Non",
         };
 
-        // Send email
-        await apiInstance.sendTransacEmail(sendSmtpEmail);
+        // 1. Send Admin Notification (Always)
+        const adminEmail = new brevo.SendSmtpEmail();
+        adminEmail.sender = {
+            email: process.env.BREVO_SENDER_EMAIL || "",
+            name: process.env.BREVO_SENDER_NAME || "Mariage Zineb & Basile",
+        };
+        adminEmail.to = [
+            {
+                email: process.env.BREVO_RECIPIENT_EMAIL || "",
+            },
+        ];
+        adminEmail.templateId = 1; // Admin notification template ID
+        adminEmail.params = emailParams;
+
+        await apiInstance.sendTransacEmail(adminEmail);
+
+        // 2. Send Guest Confirmation (Only if email provided)
+        if (email && email.trim() !== "") {
+            const guestEmail = new brevo.SendSmtpEmail();
+            guestEmail.sender = {
+                email: process.env.BREVO_SENDER_EMAIL || "",
+                name: process.env.BREVO_SENDER_NAME || "Mariage Zineb & Basile",
+            };
+            guestEmail.to = [{ email: email }];
+            guestEmail.templateId = 2;
+            guestEmail.params = emailParams;
+
+            await apiInstance.sendTransacEmail(guestEmail);
+        }
 
         return NextResponse.json(
             { success: true, message: "RSVP submitted successfully" },

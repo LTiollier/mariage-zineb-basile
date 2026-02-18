@@ -8,6 +8,7 @@ export default function RsvpForm() {
     const [formData, setFormData] = useState({
         attendance: "",
         name: "",
+        email: "",
         phone: "",
         hasChildren: "",
         childrenCount: "1",
@@ -204,6 +205,18 @@ export default function RsvpForm() {
                         />
                     </div>
                     <div className="space-y-2">
+                        <label htmlFor="email" className="block text-navy/80 font-sans text-sm uppercase tracking-wide">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-gold bg-transparent transition-colors font-serif text-lg text-navy placeholder:text-gray-300"
+                            placeholder="votre@email.com (optionnel)"
+                        />
+                    </div>
+                    <div className="space-y-2 md:col-span-2">
                         <label htmlFor="phone" className="block text-navy/80 font-sans text-sm uppercase tracking-wide">Téléphone</label>
                         <input
                             type="tel"

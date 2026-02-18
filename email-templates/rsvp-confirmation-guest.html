@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation RSVP - Mariage Zineb & Basile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: #f9f8f6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .email-wrapper {
+            width: 100%;
+            background-color: #f9f8f6;
+            padding: 40px 20px;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(26, 43, 60, 0.08);
+        }
+
+        .header {
+            background-color: #1a2b3c;
+            color: #ffffff;
+            padding: 60px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 36px;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+            line-height: 1.3;
+        }
+
+        .header p {
+            font-size: 14px;
+            margin: 0;
+            opacity: 0.9;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .content {
+            padding: 50px 40px;
+            color: #1a2b3c;
+            text-align: center;
+        }
+
+        .greeting {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #c5a059;
+        }
+
+        .message {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #1a2b3c;
+            opacity: 0.9;
+            margin: 20px 0;
+        }
+
+        .info-section {
+            background-color: #f9f8f6;
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        .info-section h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 20px;
+            margin: 0 0 20px 0;
+            color: #1a2b3c;
+            text-align: center;
+            border-bottom: 1px solid #e8e4d8;
+            padding-bottom: 15px;
+        }
+
+        .info-row {
+            display: table;
+            width: 100%;
+            margin: 12px 0;
+        }
+
+        .info-label {
+            display: table-cell;
+            font-weight: 600;
+            color: #1a2b3c;
+            opacity: 0.6;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding-right: 15px;
+            width: 40%;
+        }
+
+        .info-value {
+            display: table-cell;
+            color: #1a2b3c;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .signature {
+            margin-top: 40px;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 24px;
+            color: #c5a059;
+        }
+
+        .footer-image {
+            width: 100%;
+            display: block;
+            margin: 0;
+            border-radius: 0 0 16px 16px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #c5a059;
+            color: #ffffff !important;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin: 30px 0;
+            transition: background-color 0.3s ease;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .email-wrapper {
+                padding: 20px 10px;
+            }
+
+            .header {
+                padding: 40px 20px;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .info-label,
+            .info-value {
+                display: block;
+                width: 100%;
+                padding: 5px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-wrapper">
+        <table class="email-container" cellpadding="0" cellspacing="0" border="0" role="presentation">
+            <!-- Header -->
+            <tr>
+                <td class="header">
+                    <a href="https://basilexzineb.vercel.app/" style="text-decoration: none; color: #ffffff;">
+                        <p>Mariage</p>
+                        <h1>Zineb & Basile</h1>
+                    </a>
+                </td>
+            </tr>
+
+            <!-- Content -->
+            <tr>
+                <td class="content">
+                    <div class="greeting">
+                        Merci {{ params.name }} !
+                    </div>
+
+                    {% if params.attendance == "Oui, avec plaisir" %}
+                    <p class="message">
+                        Nous avons bien reçu votre réponse et nous sommes enchantés de savoir que vous serez parmi nous
+                        pour célébrer ce moment si spécial.
+                        Votre présence compte énormément pour nous.
+                    </p>
+
+                    <a href="https://basilexzineb.vercel.app/" class="btn">Voir les détails</a>
+
+                    <div class="info-section">
+                        <h2>Récapitulatif de votre réponse</h2>
+
+                        <div class="info-row">
+                            <div class="info-label">Présence</div>
+                            <div class="info-value">Accordée avec joie</div>
+                        </div>
+
+                        <div class="info-row">
+                            <div class="info-label">Accompagné(e) d'enfants</div>
+                            <div class="info-value">
+                                {% if params.hasChildren == "oui" %}
+                                {{ params.childrenCount }} enfant(s)
+                                {% else %}
+                                Non
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="info-row">
+                            <div class="info-label">Régime alimentaire</div>
+                            <div class="info-value">{{ params.dietary }}</div>
+                        </div>
+                    </div>
+
+                    <p class="message">
+                        Nous vous donnons rendez-vous le <strong>10 Octobre 2026</strong> au <strong>Palais
+                            Tazi</strong>, à Tanger.
+                    </p>
+                    {% else %}
+                    <p class="message">
+                        Nous avons bien reçu votre réponse. Nous regrettons que vous ne puissiez pas être des nôtres,
+                        mais nous savons que vous serez avec nous par la pensée.
+                    </p>
+
+                    <div class="info-section">
+                        <h2>Récapitulatif de votre réponse</h2>
+                        <div class="info-row">
+                            <div class="info-label">Présence</div>
+                            <div class="info-value">Absence confirmée</div>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <div class="signature">
+                        Zineb & Basile
+                    </div>
+
+                    <div style="margin-top: 30px; font-size: 13px; opacity: 0.5;">
+                        <a href="https://basilexzineb.vercel.app/"
+                            style="color: #1a2b3c; text-decoration: none;">mariage-zineb-basile.vercel.app</a>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Footer Image -->
+            <tr>
+                <td style="padding: 0;">
+                    <img src="https://basilexzineb.vercel.app/hero_palais.webp" alt="Palais Tazi" class="footer-image">
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
