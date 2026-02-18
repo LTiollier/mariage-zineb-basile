@@ -16,9 +16,12 @@ export default function Home() {
 
       <RsvpForm />
 
-      {/* Footer */}
-      <footer className="py-10 bg-white  border-t border-gold/10 text-center">
-        <p className="text-gold font-serif text-xl">Basile & Zineb</p>
+      <footer className="py-10 bg-white border-t border-gold/10 text-center flex flex-col items-center gap-4">
+        <img
+          src="/zineb-basile-transparent.svg"
+          alt="Basile & Zineb"
+          className="h-20 w-auto opacity-80 hover:opacity-100 transition-opacity"
+        />
         <p className="text-navy/40 text-xs font-sans mt-2 tracking-widest uppercase">
           10.10.2026 • Rabat
         </p>
