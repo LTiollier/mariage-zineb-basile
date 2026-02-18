@@ -32,6 +32,26 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     title: "Mariage B&Z",
   },
+  openGraph: {
+    title: "Mariage de Basile & Zineb",
+    description: "Invitation au mariage de Basile Piquard et Zineb Lahjouji - 10 Octobre 2026",
+    images: [
+      {
+        url: "/zineb-basile-transparent.png",
+        width: 1200,
+        height: 630,
+        alt: "Mariage Basile & Zineb",
+      },
+    ],
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mariage de Basile & Zineb",
+    description: "Invitation au mariage de Basile Piquard et Zineb Lahjouji - 10 Octobre 2026",
+    images: ["/zineb-basile-transparent.png"],
+  },
   robots: {
     index: false,
     follow: false,
