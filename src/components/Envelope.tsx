@@ -225,22 +225,84 @@ export const Envelope = ({ children }: { children: React.ReactNode }) => {
                                 transition={{ duration: 0.6, ease: "easeIn" }}
                                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none"
                             >
-                                <div className="relative w-24 h-24 flex items-center justify-center">
+                                <div className="relative w-28 h-28 flex items-center justify-center">
+                                    {/* Drop shadow underneath — warm red-brown */}
                                     <div
-                                        className="absolute inset-0 bg-[#e8e2d4] rounded-[45%_55%_50%_50%_/_50%_45%_55%_50%] shadow-[4px_4px_10px_rgba(0,0,0,0.2),inset_-2px_-2px_4px_rgba(255,255,255,0.5),inset_2px_2px_4px_rgba(0,0,0,0.1)] border border-[#d8d0c0]"
+                                        className="absolute inset-0 rounded-[45%_55%_52%_48%_/_48%_45%_55%_52%]"
+                                        style={{
+                                            background: "rgba(120, 30, 10, 0.4)",
+                                            filter: "blur(8px)",
+                                            transform: "translate(4px, 6px) scale(0.93)",
+                                        }}
                                     />
-                                    <div className="absolute inset-3 border-[1.5px] border-[#c0b8a8]/40 rounded-full shadow-[inset_1px_1px_3px_rgba(0,0,0,0.1)] flex items-center justify-center">
-                                        <div
-                                            className="text-3xl font-serif text-[#a8a090] font-normal tracking-[0.2em] opacity-80"
-                                            style={{
-                                                fontFamily: "'Playfair Display', serif",
-                                                textShadow: "0.5px 0.5px 1px rgba(255,255,255,0.8), -0.5px -0.5px 1px rgba(0,0,0,0.1)"
-                                            }}
-                                        >
-                                            Z&B
-                                        </div>
+                                    {/* Main wax body — warm terracotta-red, like the reference */}
+                                    <div
+                                        className="absolute inset-0 rounded-[45%_55%_50%_50%_/_50%_45%_55%_50%]"
+                                        style={{
+                                            background: `radial-gradient(ellipse at 42% 38%, #e05540 0%, #c1392b 40%, #a82d22 100%)`,
+                                            boxShadow: `
+                                                inset 0 4px 10px rgba(255, 160, 120, 0.3),
+                                                inset 0 -5px 12px rgba(80, 10, 0, 0.35),
+                                                inset 3px 0 8px rgba(80, 10, 0, 0.2),
+                                                inset -3px 0 8px rgba(80, 10, 0, 0.15),
+                                                3px 5px 16px rgba(120, 30, 10, 0.55)
+                                            `,
+                                        }}
+                                    />
+                                    {/* Outer raised rim — like the border ring of a real wax seal */}
+                                    <div
+                                        className="absolute rounded-full"
+                                        style={{
+                                            inset: "5px",
+                                            border: "2px solid rgba(180, 60, 40, 0.6)",
+                                            boxShadow: `
+                                                inset 0 2px 4px rgba(255, 160, 120, 0.2),
+                                                inset 0 -2px 4px rgba(80, 10, 0, 0.3),
+                                                0 0 0 1px rgba(255, 120, 80, 0.15)
+                                            `,
+                                        }}
+                                    />
+                                    {/* Inner engraved ring */}
+                                    <div
+                                        className="absolute rounded-full"
+                                        style={{
+                                            inset: "14px",
+                                            border: "1px solid rgba(160, 50, 30, 0.5)",
+                                            boxShadow: "inset 0 1px 3px rgba(80,10,0,0.4), 0 1px 1px rgba(255,120,80,0.15)",
+                                        }}
+                                    />
+                                    {/* Glossy specular highlight — top-left, strong like real wax */}
+                                    <div
+                                        className="absolute"
+                                        style={{
+                                            width: "38%",
+                                            height: "26%",
+                                            top: "12%",
+                                            left: "16%",
+                                            background: "radial-gradient(ellipse, rgba(255, 230, 210, 0.7) 0%, rgba(255,200,170,0.2) 60%, transparent 100%)",
+                                            filter: "blur(4px)",
+                                            transform: "rotate(-25deg)",
+                                            borderRadius: "50%",
+                                        }}
+                                    />
+                                    {/* Z & B initials — debossed, same red family, slightly darker */}
+                                    <div
+                                        className="relative z-10 flex items-center justify-center"
+                                        style={{
+                                            fontFamily: "'Playfair Display', serif",
+                                            fontSize: "1.1rem",
+                                            fontWeight: 700,
+                                            letterSpacing: "0.12em",
+                                            color: "#8a2318",
+                                            textShadow: `
+                                                0 1px 1px rgba(255, 140, 100, 0.4),
+                                                0 -1px 2px rgba(60, 5, 0, 0.5)
+                                            `,
+                                            userSelect: "none",
+                                        }}
+                                    >
+                                        Z&nbsp;&amp;&nbsp;B
                                     </div>
-                                    <div className="absolute top-2 left-6 w-8 h-4 bg-white/20 blur-md rounded-full rotate-[-20deg]" />
                                 </div>
                             </motion.div>
 
