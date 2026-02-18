@@ -28,7 +28,7 @@ export default function Hero() {
           className="space-y-6"
         >
           <p className="text-gold-light tracking-[0.3em] uppercase text-sm md:text-base font-sans">
-            Nous sommes heureux de vous inviter au mariage de
+            Vous êtes invités au mariage de
           </p>
           <h1 className="text-white text-5xl md:text-8xl font-serif italic">
             Zineb{" "}
@@ -43,7 +43,7 @@ export default function Hero() {
             <div className="h-[1px] w-12 bg-gold-light" />
           </div>
           <p className="text-white/90 text-lg md:text-xl font-serif tracking-wide py-4">
-            Palais Tazi, Tanger, Maroc
+            Palais Tazi, Rabat
           </p>
         </motion.div>
       </div>
