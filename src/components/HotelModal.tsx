@@ -1,56 +1,66 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Star, ExternalLink, Globe } from "lucide-react";
+import { X, ExternalLink, Globe, Clock, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import Image from "next/image";
 
 interface Hotel {
     name: string;
     description: string;
     price: string;
+    time: string;
+    style: string;
     highlight: string;
-    reason: string;
-    officialSite: string;
+    officialSite?: string;
     bookingLink: string;
+    image: string;
 }
 
 const hotels: Hotel[] = [
     {
-        name: "Villazancot",
-        description: "Maison d'hôtes - Marshan",
-        reason: "Situé à deux pas du Palais Tazi, c'est l'option la plus charmante et la mieux notée du quartier.",
+        name: "Rent-Inn Suites Hotel",
+        description: "Moderne & Fonctionnel",
+        time: "5-7 min",
+        style: "Propre, épuré et très bien situé",
+        price: "85 € - 95 €",
+        highlight: "C'est l'option la plus moderne et fonctionnelle à la lisière du quartier Agdal. Idéal pour ceux qui cherchent de l'espace et un cadre contemporain.",
+        bookingLink: "https://www.booking.com/hotel/ma/rent-inn-suite.fr.html",
+        image: "/hotels/rent-inn-suites-hotel.webp"
+    },
+    {
+        name: "Atlantic Agdal",
+        description: "4 étoiles classique",
+        time: "8-10 min",
+        style: "Grand hôtel de standing, très prisé pour les séjours d'affaires.",
+        price: "90 € - 105 €",
+        highlight: "Un hôtel 4 étoiles classique situé sur l'une des artères principales de l'Agdal. C'est une valeur sûre pour le confort.",
+        officialSite: "https://atlanticagdal.com/",
+        bookingLink: "https://www.booking.com/hotel/ma/atlantic-agdal.fr.html",
+        image: "/hotels/atlantic-agdal-hotel.webp"
+    },
+    {
+        name: "Rihab Hotel",
+        description: "Économique & Stratégique",
+        time: "8-10 min",
+        style: "Simple, correct et fonctionnel.",
+        price: "55 € - 70 €",
+        highlight: "L'option la plus économique du secteur. Il est stratégiquement placé entre le quartier de l'Aviation et le bas du Souissi.",
+        officialSite: "https://hotelrihab.com/",
+        bookingLink: "https://www.booking.com/hotel/ma/rihab.fr.html",
+        image: "/hotels/rihab-hotel.webp"
+    },
+    {
+        name: "Le Pietri Urban Hotel",
+        description: "Urbain & Artistique",
+        time: "12-15 min",
+        style: "Urbain, artistique et chaleureux (Célèbre Jazz Bar).",
         price: "75 € - 85 €",
-        highlight: "Le coup de cœur authentique et accueil exceptionnel.",
-        officialSite: "https://villazancot.com",
-        bookingLink: "https://www.booking.com/hotel/ma/villazancot.fr.html"
-    },
-    {
-        name: "Dar Tanja Boutique Hotel",
-        description: "Calme & Piscine",
-        reason: "Une magnifique demeure un peu plus au sud, idéale pour se reposer au bord de l'eau.",
-        price: "80 € - 95 €",
-        highlight: "Sensation d'être dans une villa privée avec un magnifique jardin.",
-        officialSite: "https://dartanja.com",
-        bookingLink: "https://www.booking.com/hotel/ma/dar-tanja.fr.html"
-    },
-    {
-        name: "Fredj Hotel & Spa",
-        description: "Moderne & Vue",
-        reason: "Un hôtel contemporain avec une superbe terrasse surplombant la ville et la mer.",
-        price: "65 € - 80 €",
-        highlight: "Vue imprenable sur la baie et emplacement stratégique.",
-        officialSite: "https://fredjhotel.com",
-        bookingLink: "https://www.booking.com/hotel/ma/fredj-spa.fr.html"
-    },
-    {
-        name: "Hôtel Rembrandt",
-        description: "Économique & Central",
-        reason: "Une institution historique au cœur de Tanger avec un jardin tropical et une piscine.",
-        price: "55 € - 65 €",
-        highlight: "Charme rétro et proximité immédiate du centre-ville.",
-        officialSite: "https://rembrandt-tangier.hotel-rn.com",
-        bookingLink: "https://www.booking.com/hotel/ma/rembrandt-tangier.fr.html"
+        highlight: "Situé près de la place Pietri (Quartier Hassan). C'est l'adresse idéale si vous cherchez un hôtel avec une âme.",
+        officialSite: "https://lepietri.com/",
+        bookingLink: "https://www.booking.com/hotel/ma/le-pietri.fr.html",
+        image: "/hotels/le-pietri-hotel.webp"
     }
 ];
 
@@ -100,8 +110,8 @@ export default function HotelModal({
                         {/* Header */}
                         <div className="p-6 md:p-8 border-b border-gold/10 flex justify-between items-center bg-white/80 backdrop-blur-md sticky top-0 z-10">
                             <div>
-                                <h2 className="text-3xl md:text-4xl font-serif italic text-gold">Notre sélection d'hôtels</h2>
-                                <p className="text-navy/60 font-sans text-sm md:text-base mt-1">À proximité du Palais Tazi, Tanger</p>
+                                <h2 className="text-3xl md:text-4xl font-serif italic text-gold">Hébergements</h2>
+                                <p className="text-navy/60 font-sans text-sm md:text-base mt-1">Notre sélection à proximité du Palais Tazi, Rabat</p>
                             </div>
                             <button
                                 onClick={onClose}
@@ -114,57 +124,77 @@ export default function HotelModal({
 
                         {/* Scrollable Content */}
                         <div className="flex-1 overflow-y-auto p-6 md:p-8 custom-scrollbar">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
                                 {hotels.map((hotel, index) => (
                                     <motion.div
                                         key={hotel.name}
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: index * 0.1 + 0.2 }}
-                                        className="bg-white p-6 rounded-2xl border border-gold/5 shadow-sm hover:shadow-md transition-shadow group flex flex-col h-full"
+                                        className="bg-white rounded-2xl border border-gold/5 shadow-sm hover:shadow-md transition-shadow group overflow-hidden flex flex-col sm:flex-row h-full"
                                     >
-                                        <div className="flex justify-between items-start mb-4">
-                                            <div className="flex-1">
-                                                <h3 className="text-2xl font-serif italic text-navy group-hover:text-gold transition-colors">{hotel.name}</h3>
-                                                <p className="text-gold font-sans text-xs uppercase tracking-widest mt-1 font-semibold">{hotel.description}</p>
-                                            </div>
-                                            <div className="bg-ivory px-3 py-1 rounded-full text-navy/60 text-xs font-sans whitespace-nowrap border border-gold/10 ml-4">
-                                                ~{hotel.price}
+                                        {/* Image Section */}
+                                        <div className="relative w-full sm:w-1/3 min-h-[160px] sm:min-h-full">
+                                            <Image
+                                                src={hotel.image}
+                                                alt={hotel.name}
+                                                fill
+                                                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                            />
+                                            <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg text-[10px] font-sans font-bold text-gold border border-gold/10 uppercase tracking-wider">
+                                                {hotel.price}
                                             </div>
                                         </div>
 
-                                        <p className="text-navy/80 text-sm leading-relaxed font-sans mb-6">
-                                            {hotel.reason}
-                                        </p>
-
-                                        <div className="flex flex-col space-y-3 mt-auto">
-                                            <div className="p-3 bg-ivory rounded-xl flex items-start space-x-3 mb-4">
-                                                <div className="p-1.5 bg-gold/10 rounded-lg text-gold mt-0.5 shrink-0">
-                                                    <Star className="w-3.5 h-3.5 fill-gold/20" />
+                                        {/* Content Section */}
+                                        <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+                                            <div>
+                                                <div className="flex justify-between items-start mb-2">
+                                                    <div>
+                                                        <h3 className="text-xl font-serif italic text-navy group-hover:text-gold transition-colors">{hotel.name}</h3>
+                                                        <p className="text-gold font-sans text-[10px] uppercase tracking-widest mt-0.5 font-semibold">{hotel.description}</p>
+                                                    </div>
                                                 </div>
-                                                <p className="text-xs text-navy/70 italic font-serif leading-snug">
-                                                    <span className="font-sans uppercase tracking-[0.05em] text-[10px] text-gold font-bold block mb-1">Le petit plus</span>
+
+                                                <div className="flex items-center gap-4 mb-4 text-[11px] text-navy/40 font-sans">
+                                                    <div className="flex items-center gap-1.5">
+                                                        <Clock className="w-3.5 h-3.5 text-gold/60" />
+                                                        <span>{hotel.time}</span>
+                                                    </div>
+                                                    <div className="flex items-center gap-1.5">
+                                                        <Sparkles className="w-3.5 h-3.5 text-gold/60" />
+                                                        <span className="truncate">{hotel.style}</span>
+                                                    </div>
+                                                </div>
+
+                                                <p className="text-navy/70 text-xs leading-relaxed font-sans mb-6 line-clamp-3">
                                                     {hotel.highlight}
                                                 </p>
                                             </div>
 
-                                            <div className="grid grid-cols-2 gap-3">
-                                                <a
-                                                    href={hotel.officialSite}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="flex items-center justify-center space-x-2 px-4 py-2.5 bg-[#1a2b3c] text-white rounded-full text-[11px] uppercase tracking-widest font-sans hover:bg-gold transition-colors"
-                                                >
-                                                    <Globe className="w-3.5 h-3.5" />
-                                                    <span>Site Officiel</span>
-                                                </a>
+                                            <div className="grid grid-cols-2 gap-3 mt-auto">
+                                                {hotel.officialSite ? (
+                                                    <a
+                                                        href={hotel.officialSite}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="flex items-center justify-center space-x-2 px-3 py-2 bg-[#1a2b3c] text-white rounded-full text-[10px] uppercase tracking-widest font-sans hover:bg-gold transition-colors text-center"
+                                                    >
+                                                        <Globe className="w-3 h-3" />
+                                                        <span>Site</span>
+                                                    </a>
+                                                ) : (
+                                                    <div className="bg-ivory text-navy/30 rounded-full text-[10px] uppercase tracking-widest font-sans flex items-center justify-center opacity-50 cursor-not-allowed">
+                                                        Site
+                                                    </div>
+                                                )}
                                                 <a
                                                     href={hotel.bookingLink}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="flex items-center justify-center space-x-2 px-4 py-2.5 border border-[#1a2b3c] text-[#1a2b3c] rounded-full text-[11px] uppercase tracking-widest font-sans hover:border-gold hover:text-gold transition-colors"
+                                                    className="flex items-center justify-center space-x-2 px-3 py-2 border border-[#1a2b3c] text-[#1a2b3c] rounded-full text-[10px] uppercase tracking-widest font-sans hover:border-gold hover:text-gold transition-colors text-center"
                                                 >
-                                                    <ExternalLink className="w-3.5 h-3.5" />
+                                                    <ExternalLink className="w-3 h-3" />
                                                     <span>Booking</span>
                                                 </a>
                                             </div>
@@ -175,7 +205,7 @@ export default function HotelModal({
 
                             {/* Note about taxi */}
                             <div className="mt-12 text-center text-navy/40 text-[10px] font-sans max-w-lg mx-auto italic uppercase tracking-widest">
-                                La plupart de ces établissements sont accessibles en moins de 10 minutes en taxi ou à pied depuis le Palais Tazi.
+                                Les temps de trajet sont indiqués pour un trajet en taxi vers le Palais Tazi.
                             </div>
                         </div>
                     </motion.div>
