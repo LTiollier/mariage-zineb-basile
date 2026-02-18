@@ -38,7 +38,7 @@ const hotels: Hotel[] = [
         highlight: "Un hôtel 4 étoiles classique situé sur l'une des artères principales de l'Agdal. C'est une valeur sûre pour le confort.",
         officialSite: "https://atlanticagdal.com/",
         bookingLink: "https://www.booking.com/hotel/ma/atlantic-agdal.fr.html",
-        image: "/hotels/atlantic-agdal-hotel.webp"
+        image: "/hotels/atlanticagdal-hotel.webp"
     },
     {
         name: "Rihab Hotel",
@@ -134,7 +134,7 @@ export default function HotelModal({
                                         className="bg-white rounded-2xl border border-gold/5 shadow-sm hover:shadow-md transition-shadow group overflow-hidden flex flex-col sm:flex-row h-full"
                                     >
                                         {/* Image Section */}
-                                        <div className="relative w-full sm:w-1/3 min-h-[160px] sm:min-h-full">
+                                        <div className="relative w-full sm:w-1/3 min-h-[160px] sm:min-h-full shrink-0">
                                             <Image
                                                 src={hotel.image}
                                                 alt={hotel.name}
