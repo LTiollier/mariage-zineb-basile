@@ -105,7 +105,7 @@ export default function HotelModal({
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                        className="fixed inset-4 md:inset-10 lg:inset-20 bg-ivory rounded-3xl z-[10000] overflow-hidden shadow-2xl flex flex-col border border-gold/20"
+                        className="fixed inset-y-4 md:inset-y-10 lg:inset-y-20 inset-x-4 md:inset-x-10 lg:inset-x-20 max-w-6xl mx-auto bg-ivory rounded-3xl z-[10000] overflow-hidden shadow-2xl flex flex-col border border-gold/20"
                     >
                         {/* Header */}
                         <div className="p-6 md:p-8 border-b border-gold/10 flex justify-between items-center bg-white/80 backdrop-blur-md sticky top-0 z-10">
@@ -124,7 +124,7 @@ export default function HotelModal({
 
                         {/* Scrollable Content */}
                         <div className="flex-1 overflow-y-auto p-4 md:p-8 custom-scrollbar">
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 w-full max-w-5xl mx-auto">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 w-full">
                                 {hotels.map((hotel, index) => (
                                     <motion.div
                                         key={hotel.name}
@@ -147,7 +147,7 @@ export default function HotelModal({
                                         </div>
 
                                         {/* Content Section */}
-                                        <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+                                        <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between min-w-0">
                                             <div>
                                                 <div className="flex justify-between items-start mb-2">
                                                     <div>
