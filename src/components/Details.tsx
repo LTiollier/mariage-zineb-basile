@@ -33,7 +33,15 @@ export default function Details() {
           <DetailCard
             icon={<Shirt className="w-6 h-6" />}
             title="Dress Code"
-            content="Nous serions ravis de vous voir dans vos plus beaux atours. Tenue festive ou traditionnelle (Caftan ou robe longue pour les dames, Jabador ou costume pour les messieurs)."
+            content={
+              <>
+                Nous serions ravis de vous voir dans vos plus beaux atours. Tenue festive ou traditionnelle (Caftan ou robe longue pour les dames, Jabador ou costume pour les messieurs).
+                <br />
+                <span className="text-[10px] sm:text-xs italic mt-2 block opacity-80">
+                  (Si vous avez envie d’oser la tenue traditionnelle, n’hésitez pas à nous demander conseil)
+                </span>
+              </>
+            }
           />
           <DetailCard
             icon={<Info className="w-6 h-6" />}
@@ -63,7 +71,7 @@ function DetailCard({
 }: {
   icon: React.ReactNode;
   title: string;
-  content: string;
+  content: React.ReactNode;
   actionText?: string;
   actionUrl?: string;
   onActionClick?: () => void;
