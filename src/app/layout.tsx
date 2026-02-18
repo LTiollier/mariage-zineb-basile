@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Mariage de Zineb & Basile",
+  title: "Mariage de Basile & Zineb",
   description:
     "Invitation au mariage de Zineb Lahjouji et Basile Piquard - 10 Octobre 2026",
   robots: {

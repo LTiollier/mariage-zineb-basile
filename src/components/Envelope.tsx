@@ -301,7 +301,7 @@ export const Envelope = ({ children }: { children: React.ReactNode }) => {
                                             userSelect: "none",
                                         }}
                                     >
-                                        Z&nbsp;&amp;&nbsp;B
+                                        B&nbsp;&amp;&nbsp;Z
                                     </div>
                                 </div>
                             </motion.div>

@@ -18,7 +18,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-10 bg-white  border-t border-gold/10 text-center">
-        <p className="text-gold font-serif text-xl">Zineb & Basile</p>
+        <p className="text-gold font-serif text-xl">Basile & Zineb</p>
         <p className="text-navy/40 text-xs font-sans mt-2 tracking-widest uppercase">
           10.10.2026 • Rabat
         </p>

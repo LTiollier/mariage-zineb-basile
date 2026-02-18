@@ -31,9 +31,9 @@ export default function Hero() {
             Vous êtes invités au mariage de
           </p>
           <h1 className="text-white text-5xl md:text-8xl font-serif ">
-            Zineb{" "}
+            Basile{" "}
             <span className="font-sans text-3xl md:text-5xl not-italic">&</span>{" "}
-            Basile
+            Zineb
           </h1>
           <motion.div
             initial={{ opacity: 0 }}

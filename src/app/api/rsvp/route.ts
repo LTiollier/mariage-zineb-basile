@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
         const adminEmail = new brevo.SendSmtpEmail();
         adminEmail.sender = {
             email: process.env.BREVO_SENDER_EMAIL || "",
-            name: process.env.BREVO_SENDER_NAME || "Mariage Zineb & Basile",
+            name: process.env.BREVO_SENDER_NAME || "Mariage Basile & Zineb",
         };
         adminEmail.to = [
             {
@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
             const guestEmail = new brevo.SendSmtpEmail();
             guestEmail.sender = {
                 email: process.env.BREVO_SENDER_EMAIL || "",
-                name: process.env.BREVO_SENDER_NAME || "Mariage Zineb & Basile",
+                name: process.env.BREVO_SENDER_NAME || "Mariage Basile & Zineb",
             };
             guestEmail.to = [{ email: email }];
             guestEmail.templateId = 2;
