@@ -32,7 +32,7 @@ export default function Hero() {
           </p>
           <h1 className="text-white text-5xl md:text-8xl font-serif ">
             Zineb{" "}
-            <span className="font-sans text-3xl md:text-5xl">&</span>{" "}
+            <span className="font-sans text-3xl md:text-5xl not-italic">&</span>{" "}
             Basile
           </h1>
           <motion.div

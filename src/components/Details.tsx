@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Info, Map as MapIcon, Shirt } from "lucide-react";
+import { Info, Shirt } from "lucide-react";
 import { useState } from "react";
 import HotelModal from "./HotelModal";
 
@@ -22,14 +22,7 @@ export default function Details() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <DetailCard
-            icon={<MapIcon className="w-6 h-6" />}
-            title="Le Lieu"
-            content="Le Palais Tazi est un joyau architectural niché au cœur de Rabat. Il offre un cadre somptueux pour une célébration inoubliable."
-            actionText="Voir sur Google Maps"
-            actionUrl="https://maps.app.goo.gl/614jX38P2Xqfvvk69"
-          />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <DetailCard
             icon={<Shirt className="w-6 h-6" />}
             title="Dress Code"
