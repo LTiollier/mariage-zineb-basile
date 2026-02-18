@@ -123,15 +123,15 @@ export default function HotelModal({
                         </div>
 
                         {/* Scrollable Content */}
-                        <div className="flex-1 overflow-y-auto p-6 md:p-8 custom-scrollbar">
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
+                        <div className="flex-1 overflow-y-auto p-4 md:p-8 custom-scrollbar">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 w-full max-w-5xl mx-auto">
                                 {hotels.map((hotel, index) => (
                                     <motion.div
                                         key={hotel.name}
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: index * 0.1 + 0.2 }}
-                                        className="bg-white rounded-2xl border border-gold/5 shadow-sm hover:shadow-md transition-shadow group overflow-hidden flex flex-col sm:flex-row h-full"
+                                        className="bg-white rounded-2xl border border-gold/5 shadow-sm hover:shadow-md transition-shadow group overflow-hidden flex flex-col sm:flex-row h-full min-w-0"
                                     >
                                         {/* Image Section */}
                                         <div className="relative w-full sm:w-1/3 min-h-[160px] sm:min-h-full shrink-0">
