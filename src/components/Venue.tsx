@@ -49,7 +49,7 @@ export default function Venue() {
                         className="relative aspect-video md:aspect-auto w-full rounded-2xl overflow-hidden shadow-lg border border-gold/10 min-h-[250px]"
                     >
                         <Image
-                            src="/hero_palais.png"
+                            src="/hero_palais.webp"
                             alt="Palais Tazi Rabat"
                             fill
                             className="object-cover"
