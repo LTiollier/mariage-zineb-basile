@@ -33,7 +33,7 @@ export default function Details() {
           <DetailCard
             icon={<Shirt className="w-6 h-6" />}
             title="Dress Code"
-            content="Nous serions ravis de vous voir dans vos plus beaux atours. Tenue formelle ou traditionnelle (Caftan pour les dames, Jabador ou costume pour les messieurs)."
+            content="Nous serions ravis de vous voir dans vos plus beaux atours. Tenue festive ou traditionnelle (Caftan ou robe longue pour les dames, Jabador ou costume pour les messieurs)."
           />
           <DetailCard
             icon={<Info className="w-6 h-6" />}
