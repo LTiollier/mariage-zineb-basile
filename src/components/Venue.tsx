@@ -27,7 +27,7 @@ export default function Venue() {
                 >
                     <div className="space-y-1">
                         <h2 className="text-3xl md:text-4xl font-serif  text-gold">
-                            Localisation
+                            Le lieu
                         </h2>
                         <h3 className="text-xl md:text-2xl font-serif text-navy">
                             Palais Tazi

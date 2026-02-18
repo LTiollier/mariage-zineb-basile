@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import {
-  MapPin,
   Castle,
   Utensils,
   Music,
@@ -14,25 +13,21 @@ const events = [
   {
     time: "16:00",
     title: "Accueil des invités",
-    location: "Palais Tazi",
     icon: <Sparkles className="w-6 h-6" />,
   },
   {
     time: "18:00",
     title: "Entrée des mariés & Cérémonie",
-    location: "Palais Tazi",
     icon: <Castle className="w-6 h-6" />,
   },
   {
     time: "22:00",
     title: "Dîner",
-    location: "Palais Tazi",
     icon: <Utensils className="w-6 h-6" />,
   },
   {
     time: "00:00",
     title: "Prolongation de la soirée",
-    location: "Palais Tazi",
     icon: <Music className="w-6 h-6" />,
   },
 ];
@@ -90,11 +85,6 @@ export default function Program() {
                   <div className="flex items-center justify-center gap-1 text-gold/80 font-sans text-[10px] font-bold uppercase tracking-widest mb-3">
                     <Clock className="w-2.5 h-2.5" />
                     {event.time}
-                  </div>
-
-                  <div className="flex items-center justify-center gap-1.5 text-navy/30 text-[9px] font-sans tracking-tighter uppercase  pt-1">
-                    <MapPin className="w-2.5 h-2.5" />
-                    {event.location}
                   </div>
                 </div>
               </motion.div>
