@@ -178,7 +178,7 @@ export default function HotelModal({
                                                         href={hotel.officialSite}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className="flex items-center justify-center space-x-2 px-3 py-2 bg-[#1a2b3c] text-white rounded-full text-[10px] uppercase tracking-widest font-sans hover:bg-gold transition-colors text-center"
+                                                        className="flex items-center justify-center space-x-2 px-3 py-2 border border-[#1a2b3c] text-[#1a2b3c] rounded-full text-[10px] uppercase tracking-widest font-sans hover:bg-[#1a2b3c] hover:text-white transition-colors text-center"
                                                     >
                                                         <Globe className="w-3 h-3" />
                                                         <span>Site</span>
