@@ -35,16 +35,23 @@ export default function Hero() {
             <span className="font-sans text-3xl md:text-5xl not-italic">&</span>{" "}
             Basile
           </h1>
-          <div className="flex items-center justify-center gap-4">
-            <div className="h-[1px] w-12 bg-gold-light" />
-            <p className="text-gold-light text-xl md:text-2xl font-serif">
-              10 Octobre 2026
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8, duration: 1 }}
+            className="flex flex-col items-center gap-4 py-6"
+          >
+            <div className="flex items-center gap-6">
+              <div className="h-[1px] w-8 md:w-16 bg-gold-light/40" />
+              <p className="text-white text-3xl md:text-6xl font-serif italic tracking-wide">
+                10 Octobre 2026
+              </p>
+              <div className="h-[1px] w-8 md:w-16 bg-gold-light/40" />
+            </div>
+            <p className="text-gold-light text-xs md:text-sm font-sans tracking-[0.5em] uppercase">
+              Palais Tazi • Rabat, Maroc
             </p>
-            <div className="h-[1px] w-12 bg-gold-light" />
-          </div>
-          <p className="text-white/90 text-lg md:text-xl font-serif tracking-wide py-4">
-            Palais Tazi, Rabat
-          </p>
+          </motion.div>
         </motion.div>
       </div>
 

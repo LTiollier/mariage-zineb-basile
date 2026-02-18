@@ -26,7 +26,7 @@ export default function Details() {
           <DetailCard
             icon={<MapIcon className="w-6 h-6" />}
             title="Le Lieu"
-            content="Le Palais Tazi est un joyau architectural niché au cœur de Tanger. Il offre un cadre somptueux et une vue imprenable sur la baie."
+            content="Le Palais Tazi est un joyau architectural niché au cœur de Rabat. Il offre un cadre somptueux pour une célébration inoubliable."
             actionText="Voir sur Google Maps"
             actionUrl="https://maps.app.goo.gl/614jX38P2Xqfvvk69"
           />
