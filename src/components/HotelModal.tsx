@@ -110,7 +110,7 @@ export default function HotelModal({
                         {/* Header */}
                         <div className="p-6 md:p-8 border-b border-gold/10 flex justify-between items-center bg-white/80 backdrop-blur-md sticky top-0 z-10">
                             <div>
-                                <h2 className="text-3xl md:text-4xl font-serif italic text-gold">Hébergements</h2>
+                                <h2 className="text-3xl md:text-4xl font-serif  text-gold">Hébergements</h2>
                                 <p className="text-navy/60 font-sans text-sm md:text-base mt-1">Notre sélection à proximité du Palais Tazi, Rabat</p>
                             </div>
                             <button
@@ -151,7 +151,7 @@ export default function HotelModal({
                                             <div>
                                                 <div className="flex justify-between items-start mb-2">
                                                     <div>
-                                                        <h3 className="text-xl font-serif italic text-navy group-hover:text-gold transition-colors">{hotel.name}</h3>
+                                                        <h3 className="text-xl font-serif  text-navy group-hover:text-gold transition-colors">{hotel.name}</h3>
                                                         <p className="text-gold font-sans text-[10px] uppercase tracking-widest mt-0.5 font-semibold">{hotel.description}</p>
                                                     </div>
                                                 </div>
@@ -204,7 +204,7 @@ export default function HotelModal({
                             </div>
 
                             {/* Note about taxi */}
-                            <div className="mt-12 text-center text-navy/40 text-[10px] font-sans max-w-lg mx-auto italic uppercase tracking-widest">
+                            <div className="mt-12 text-center text-navy/40 text-[10px] font-sans max-w-lg mx-auto  uppercase tracking-widest">
                                 Les temps de trajet sont indiqués pour un trajet en taxi vers le Palais Tazi.
                             </div>
                         </div>

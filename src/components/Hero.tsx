@@ -30,9 +30,9 @@ export default function Hero() {
           <p className="text-gold-light tracking-[0.3em] uppercase text-sm md:text-base font-sans">
             Vous êtes invités au mariage de
           </p>
-          <h1 className="text-white text-5xl md:text-8xl font-serif italic">
+          <h1 className="text-white text-5xl md:text-8xl font-serif ">
             Zineb{" "}
-            <span className="font-sans text-3xl md:text-5xl not-italic">&</span>{" "}
+            <span className="font-sans text-3xl md:text-5xl">&</span>{" "}
             Basile
           </h1>
           <motion.div
@@ -43,7 +43,7 @@ export default function Hero() {
           >
             <div className="flex items-center gap-6">
               <div className="h-[1px] w-8 md:w-16 bg-gold-light/40" />
-              <p className="text-white text-3xl md:text-6xl font-serif italic tracking-wide">
+              <p className="text-white text-3xl md:text-6xl font-serif  tracking-wide">
                 10 Octobre 2026
               </p>
               <div className="h-[1px] w-8 md:w-16 bg-gold-light/40" />

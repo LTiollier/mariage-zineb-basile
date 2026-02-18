@@ -18,7 +18,7 @@ export default function Home() {
       <section className="py-20 bg-ivory text-navy text-center px-4">
         <div className="max-w-4xl mx-auto space-y-12">
           <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-serif italic text-gold">
+            <h2 className="text-4xl md:text-5xl font-serif  text-gold">
               Confirmes ta présence
             </h2>
             <p className="font-sans text-lg text-navy/60 max-w-xl mx-auto">

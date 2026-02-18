@@ -8,7 +8,7 @@ import Image from "next/image";
 const Map = dynamic(() => import("./Map"), {
     ssr: false,
     loading: () => (
-        <div className="w-full h-full bg-ivory animate-pulse flex items-center justify-center text-gold font-serif italic">
+        <div className="w-full h-full bg-ivory animate-pulse flex items-center justify-center text-gold font-serif ">
             Chargement de la carte...
         </div>
     ),
@@ -26,7 +26,7 @@ export default function Venue() {
                     className="text-center space-y-3"
                 >
                     <div className="space-y-1">
-                        <h2 className="text-3xl md:text-4xl font-serif italic text-gold">
+                        <h2 className="text-3xl md:text-4xl font-serif  text-gold">
                             Localisation
                         </h2>
                         <h3 className="text-xl md:text-2xl font-serif text-navy">

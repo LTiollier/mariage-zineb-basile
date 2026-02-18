@@ -314,7 +314,7 @@ export const Envelope = ({ children }: { children: React.ReactNode }) => {
                                     transition={{ delay: 1.5, duration: 1.5 }}
                                     className="absolute -bottom-28 md:-bottom-16 left-1/2 -translate-x-1/2 text-center"
                                 >
-                                    <p className="font-serif italic text-[#8b1d1d]/40 text-sm tracking-widest uppercase">
+                                    <p className="font-serif  text-[#8b1d1d]/40 text-sm tracking-widest uppercase">
                                         Cliquez pour ouvrir
                                     </p>
                                     <motion.div

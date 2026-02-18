@@ -17,7 +17,7 @@ export default function Details() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-serif italic text-gold">
+          <h2 className="text-4xl md:text-5xl font-serif  text-gold">
             Informations Utiles
           </h2>
         </motion.div>
@@ -37,7 +37,7 @@ export default function Details() {
               <>
                 Nous serions ravis de vous voir dans vos plus beaux atours. Tenue festive ou traditionnelle (Caftan ou robe longue pour les dames, Jabador ou costume pour les messieurs).
                 <br />
-                <span className="text-[10px] sm:text-xs italic mt-2 block opacity-80">
+                <span className="text-[10px] sm:text-xs  mt-2 block opacity-80">
                   (Si vous avez envie d’oser la tenue traditionnelle, n’hésitez pas à nous demander conseil)
                 </span>
               </>
@@ -84,7 +84,7 @@ function DetailCard({
       className="bg-white p-8 rounded-2xl shadow-sm border border-gold/10 flex flex-col items-center text-center space-y-4"
     >
       <div className="p-3 bg-ivory rounded-full text-gold">{icon}</div>
-      <h3 className="text-2xl font-serif italic text-navy">{title}</h3>
+      <h3 className="text-2xl font-serif  text-navy">{title}</h3>
       <p className="text-navy/70 leading-relaxed font-sans text-sm">
         {content}
       </p>

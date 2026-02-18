@@ -48,10 +48,10 @@ export default function Program() {
           transition={{ duration: 0.8 }}
           className="text-center mb-24 space-y-4"
         >
-          <h2 className="text-5xl md:text-6xl font-serif italic text-navy/80 tracking-tight">
+          <h2 className="text-5xl md:text-6xl font-serif  text-navy/80 tracking-tight">
             Programme du jour
           </h2>
-          <div className="flex items-center justify-center gap-3 text-gold font-serif italic text-xl">
+          <div className="flex items-center justify-center gap-3 text-gold font-serif  text-xl">
             <span className="w-12 h-[1px] bg-gold/20" />
             10 Octobre 2026
             <span className="w-12 h-[1px] bg-gold/20" />
@@ -83,7 +83,7 @@ export default function Program() {
 
                 {/* Content */}
                 <div className="px-4 space-y-2">
-                  <h3 className="text-xl font-serif text-navy italic">
+                  <h3 className="text-xl font-serif text-navy ">
                     {event.title}
                   </h3>
                   {/* Time Below Title */}
@@ -92,7 +92,7 @@ export default function Program() {
                     {event.time}
                   </div>
 
-                  <div className="flex items-center justify-center gap-1.5 text-navy/30 text-[9px] font-sans tracking-tighter uppercase italic pt-1">
+                  <div className="flex items-center justify-center gap-1.5 text-navy/30 text-[9px] font-sans tracking-tighter uppercase  pt-1">
                     <MapPin className="w-2.5 h-2.5" />
                     {event.location}
                   </div>
