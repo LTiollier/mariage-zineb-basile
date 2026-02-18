@@ -78,14 +78,13 @@ export default function Program() {
 
                 {/* Content */}
                 <div className="px-4 space-y-2">
-                  <h3 className="text-xl font-serif text-navy ">
-                    {event.title}
-                  </h3>
-                  {/* Time Below Title */}
                   <div className="flex items-center justify-center gap-1 text-gold/80 font-sans text-[10px] font-bold uppercase tracking-widest mb-3">
                     <Clock className="w-2.5 h-2.5" />
                     {event.time}
                   </div>
+                  <h3 className="text-xl font-serif text-navy ">
+                    {event.title}
+                  </h3>
                 </div>
               </motion.div>
             ))}
