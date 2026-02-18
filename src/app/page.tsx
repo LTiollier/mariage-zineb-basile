@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import Countdown from "@/components/Countdown";
 import Program from "@/components/Program";
 import Details from "@/components/Details";
+import Venue from "@/components/Venue";
 import RsvpForm from "@/components/RsvpForm";
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <Countdown />
       <Program />
       <Details />
+      <Venue />
 
       {/* RSVP Section */}
       <section className="py-20 bg-ivory text-navy text-center px-4">
