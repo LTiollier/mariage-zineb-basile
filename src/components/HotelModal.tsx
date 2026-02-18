@@ -33,7 +33,7 @@ const hotels: Hotel[] = [
         name: "Atlantic Agdal",
         description: "4 étoiles classique",
         time: "8-10 min",
-        style: "Grand hôtel de standing, très prisé pour les séjours d'affaires.",
+        style: "Hôtel 4* de grand standing.",
         price: "90 € - 105 €",
         highlight: "Un hôtel 4 étoiles classique situé sur l'une des artères principales de l'Agdal. C'est une valeur sûre pour le confort.",
         officialSite: "https://atlanticagdal.com/",
@@ -55,7 +55,7 @@ const hotels: Hotel[] = [
         name: "Le Pietri Urban Hotel",
         description: "Urbain & Artistique",
         time: "12-15 min",
-        style: "Urbain, artistique et chaleureux (Célèbre Jazz Bar).",
+        style: "Urbain avec célèbre Jazz Bar.",
         price: "75 € - 85 €",
         highlight: "Situé près de la place Pietri (Quartier Hassan). C'est l'adresse idéale si vous cherchez un hôtel avec une âme.",
         officialSite: "https://lepietri.com/",
@@ -157,7 +157,7 @@ export default function HotelModal({
                                                 </div>
 
                                                 <div className="flex items-center gap-4 mb-4 text-[11px] text-navy/40 font-sans">
-                                                    <div className="flex items-center gap-1.5">
+                                                    <div className="flex items-center gap-1.5 whitespace-nowrap shrink-0">
                                                         <Clock className="w-3.5 h-3.5 text-gold/60" />
                                                         <span>{hotel.time}</span>
                                                     </div>
