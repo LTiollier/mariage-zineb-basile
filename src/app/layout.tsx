@@ -20,9 +20,9 @@ export const metadata: Metadata = {
     icon: [
       { url: "/zineb-basile-transparent.svg", type: "image/svg+xml" },
     ],
-    shortcut: "/zineb-basile-transparent.svg",
+    shortcut: "/zineb-basile-transparent.png",
     apple: [
-      { url: "/zineb-basile-transparent.svg", sizes: "180x180", type: "image/svg+xml" },
+      { url: "/zineb-basile-transparent.png", sizes: "180x180", type: "image/png" },
     ],
   },
   manifest: "/manifest.json",
