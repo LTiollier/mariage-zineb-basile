@@ -49,7 +49,7 @@ export default function Hero() {
               <div className="h-[1px] w-8 md:w-16 bg-gold-light/40" />
             </div>
             <p className="text-gold-light text-xs md:text-sm font-sans tracking-[0.5em] uppercase">
-              Palais Tazi • Rabat, Maroc
+              Palais Tazi • Rabat
             </p>
           </motion.div>
         </motion.div>

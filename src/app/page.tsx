@@ -13,14 +13,14 @@ export default function Home() {
       <Details />
 
       {/* RSVP Section */}
-      <section className="py-20 bg-navy text-white text-center px-4">
+      <section className="py-20 bg-ivory text-navy text-center px-4">
         <div className="max-w-4xl mx-auto space-y-12">
           <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-serif italic text-gold-light">
-              Répondez s&apos;il vous plaît
+            <h2 className="text-4xl md:text-5xl font-serif italic text-gold">
+              Confirmes ta présence
             </h2>
-            <p className="font-sans text-lg text-white/80 max-w-xl mx-auto">
-              Merci de nous confirmer votre présence avant le 1er Septembre 2026.
+            <p className="font-sans text-lg text-navy/60 max-w-xl mx-auto">
+              Merci de confirmer votre présence d’ici le 31 mai
             </p>
           </div>
 

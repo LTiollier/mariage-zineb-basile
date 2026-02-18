@@ -59,7 +59,7 @@ export default function RsvpForm() {
             angle: (i * 360) / 30, // Evenly distributed or random
             distance: 60 + Math.random() * 40, // 60-100px
             size: 4 + Math.random() * 4, // 4-8px
-            color: ['#c5a059', '#1a2b3c', '#e5d5b0'][Math.floor(Math.random() * 3)], // Gold, Navy, Light Gold
+            color: ['#c5a059', '#8b7346', '#e5d5b0'][Math.floor(Math.random() * 3)], // Gold, Darker Gold, Light Gold
             delay: Math.random() * 0.2
         }));
 
@@ -124,8 +124,8 @@ export default function RsvpForm() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6, duration: 0.5 }}
                 >
-                    <h3 className="text-3xl font-serif text-[#1a2b3c] mb-4">Merci !</h3>
-                    <p className="text-[#1a2b3c]/80 font-sans">
+                    <h3 className="text-3xl font-serif text-gold mb-4">Merci !</h3>
+                    <p className="text-navy/80 font-sans">
                         Votre réponse a bien été enregistrée. Nous avons hâte de vous retrouver.
                     </p>
                 </motion.div>
@@ -134,7 +134,7 @@ export default function RsvpForm() {
     }
 
     return (
-        <div className="w-full max-w-2xl mx-auto bg-white text-[#1a2b3c] p-6 md:p-10 rounded-2xl shadow-xl border border-gold/20">
+        <div className="w-full max-w-2xl mx-auto bg-white text-navy p-6 md:p-10 rounded-2xl shadow-xl border border-gold/20">
             <form onSubmit={handleSubmit} className="space-y-8 text-left">
                 {/* Honeypot field - hidden from users, catches bots */}
                 <input
@@ -155,9 +155,8 @@ export default function RsvpForm() {
                     </div>
                 )}
 
-                {/* Attendance */}
                 <div className="space-y-3">
-                    <label className="block text-navy font-serif text-xl">Venez-vous ?</label>
+                    <label className="block text-navy font-serif text-xl">Serez-vous présent(e) ?</label>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <label className={`
               cursor-pointer border rounded-xl p-4 flex items-center justify-center transition-all
@@ -171,7 +170,7 @@ export default function RsvpForm() {
                                 onChange={handleChange}
                                 required
                             />
-                            <span className="font-sans">Oui, avec plaisir</span>
+                            <span className="font-sans text-sm text-center">Oui, je confirme ma présence pour votre grand jour !</span>
                         </label>
                         <label className={`
               cursor-pointer border rounded-xl p-4 flex items-center justify-center transition-all
@@ -184,7 +183,7 @@ export default function RsvpForm() {
                                 className="hidden"
                                 onChange={handleChange}
                             />
-                            <span className="font-sans">Non, désolé</span>
+                            <span className="font-sans text-sm text-center">Malheureusement, je ne pourrai pas être présent(e).</span>
                         </label>
                     </div>
                 </div>
@@ -282,32 +281,32 @@ export default function RsvpForm() {
 
                             {/* Dietary */}
                             <div className="space-y-4 pt-4 border-t border-gray-100">
-                                <label className="block text-navy font-serif text-xl">Restriction alimentaire</label>
+                                <label className="block text-navy font-serif text-xl">Êtes-vous végétarien ?</label>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <label className={`
                     cursor-pointer border rounded-lg p-3 flex items-center justify-between transition-all
-                    ${formData.dietary === 'Non' ? 'border-gold bg-gold/5' : 'border-gray-200 hover:border-gray-300'}
+                    ${formData.dietary === 'Végétarien' ? 'border-gold bg-gold/5' : 'border-gray-200 hover:border-gray-300'}
                   `}>
-                                        <span className="font-sans">Aucune (Tout va bien)</span>
+                                        <span className="font-sans">Oui</span>
                                         <input
                                             type="radio"
                                             name="dietary"
-                                            value="Non"
-                                            checked={formData.dietary === 'Non'}
+                                            value="Végétarien"
+                                            checked={formData.dietary === 'Végétarien'}
                                             onChange={handleChange}
                                             className="accent-gold"
                                         />
                                     </label>
                                     <label className={`
                     cursor-pointer border rounded-lg p-3 flex items-center justify-between transition-all
-                    ${formData.dietary === 'Végétarien' ? 'border-gold bg-gold/5' : 'border-gray-200 hover:border-gray-300'}
+                    ${formData.dietary === 'Non' ? 'border-gold bg-gold/5' : 'border-gray-200 hover:border-gray-300'}
                   `}>
-                                        <span className="font-sans">Végétarien</span>
+                                        <span className="font-sans">Non</span>
                                         <input
                                             type="radio"
                                             name="dietary"
-                                            value="Végétarien"
-                                            checked={formData.dietary === 'Végétarien'}
+                                            value="Non"
+                                            checked={formData.dietary === 'Non'}
                                             onChange={handleChange}
                                             className="accent-gold"
                                         />
@@ -318,12 +317,11 @@ export default function RsvpForm() {
                     )}
                 </AnimatePresence>
 
-                {/* Submit Button */}
                 <div className="pt-6">
                     <button
                         type="submit"
                         disabled={isSubmitting || !formData.attendance}
-                        className="w-full bg-[#1a2b3c] text-white py-4 rounded-full font-sans uppercase tracking-[0.2em] transition-all hover:bg-[#1a2b3c]/90 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                        className="w-full bg-gold text-white py-4 rounded-full font-sans uppercase tracking-[0.2em] transition-all hover:bg-gold-dark disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 cursor-pointer"
                     >
                         {isSubmitting ? (
                             <>
