@@ -14,7 +14,7 @@ interface Hotel {
   style: string;
   highlight: string;
   officialSite?: string;
-  bookingLink: string;
+  bookingLink?: string;
   image: string;
 }
 
@@ -22,7 +22,7 @@ const hotels: Hotel[] = [
   {
     name: "Sofitel Rabat Jardin des Roses",
     description: "Luxe & élégance absolue",
-    time: "~10 min",
+    time: "≈ 10 min",
     style: "Palais & Jardins",
     price: "300 € – 550 €",
     highlight:
@@ -61,7 +61,7 @@ const hotels: Hotel[] = [
   {
     name: "Riad Sidi Fatah",
     description: "Tradition & Charme marocain",
-    time: "~10 min",
+    time: "≈ 10 min",
     style: "Authentique & Médina",
     price: "90 € – 120 €",
     highlight:
@@ -72,9 +72,9 @@ const hotels: Hotel[] = [
   {
     name: "Riad Al Bahi",
     description: "Histoire & authenticité",
-    time: "10 min",
-    style: "Traditionnel & Médina",
-    price: "Charme & Tradition",
+    time: "≈ 10 min",
+    style: "Charme & Histoire",
+    price: "100 € – 120 €",
     highlight:
       "Adresse pleine de caractère nichée dans la médina historique. Parfait pour les invités qui souhaitent un cadre traditionnel alliant tranquillité et confort.",
     bookingLink: "https://www.booking.com/hotel/ma/al-bahi.html",
@@ -195,31 +195,29 @@ export default function HotelModal({
                         </p>
                       </div>
 
-                      <div className="grid grid-cols-2 gap-3 mt-auto">
-                        {hotel.officialSite ? (
+                      <div className="flex gap-3 mt-auto">
+                        {hotel.officialSite && (
                           <a
                             href={hotel.officialSite}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center justify-center space-x-2 px-3 py-2 border border-[#1a2b3c] text-[#1a2b3c] rounded-full text-[10px] uppercase tracking-widest font-sans hover:bg-[#1a2b3c] hover:text-white transition-colors text-center"
+                            className="flex-1 flex items-center justify-center space-x-2 px-3 py-2 border border-[#1a2b3c] text-[#1a2b3c] rounded-full text-[10px] uppercase tracking-widest font-sans hover:bg-[#1a2b3c] hover:text-white transition-colors text-center"
                           >
                             <Globe className="w-3 h-3" />
                             <span>Site</span>
                           </a>
-                        ) : (
-                          <div className="bg-ivory text-navy/30 rounded-full text-[10px] uppercase tracking-widest font-sans flex items-center justify-center opacity-50 cursor-not-allowed">
-                            Site
-                          </div>
                         )}
-                        <a
-                          href={hotel.bookingLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center space-x-2 px-3 py-2 border border-[#1a2b3c] text-[#1a2b3c] rounded-full text-[10px] uppercase tracking-widest font-sans hover:border-gold hover:text-gold transition-colors text-center"
-                        >
-                          <ExternalLink className="w-3 h-3" />
-                          <span>Booking</span>
-                        </a>
+                        {hotel.bookingLink && (
+                          <a
+                            href={hotel.bookingLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-1 flex items-center justify-center space-x-2 px-3 py-2 border border-[#1a2b3c] text-[#1a2b3c] rounded-full text-[10px] uppercase tracking-widest font-sans hover:border-gold hover:text-gold transition-colors text-center"
+                          >
+                            <ExternalLink className="w-3 h-3" />
+                            <span>Booking</span>
+                          </a>
+                        )}
                       </div>
                     </div>
                   </motion.div>
