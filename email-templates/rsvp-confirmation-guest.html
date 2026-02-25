@@ -230,6 +230,13 @@
                             <div class="info-label">Régime alimentaire</div>
                             <div class="info-value">{{ params.dietary }}</div>
                         </div>
+
+                        {% if params.message and params.message != "" %}
+                        <div class="info-row" style="border-top: 1px solid #e8e4d8; padding-top: 10px; margin-top: 15px;">
+                            <div class="info-label">Votre petit mot</div>
+                            <div class="info-value" style="font-style: italic;">"{{ params.message }}"</div>
+                        </div>
+                        {% endif %}
                     </div>
 
                     <p class="message">
@@ -248,6 +255,13 @@
                             <div class="info-label">Présence</div>
                             <div class="info-value">Absence confirmée</div>
                         </div>
+
+                        {% if params.message and params.message != "" %}
+                        <div class="info-row" style="border-top: 1px solid #e8e4d8; padding-top: 10px; margin-top: 15px;">
+                            <div class="info-label">Votre petit mot</div>
+                            <div class="info-value" style="font-style: italic;">"{{ params.message }}"</div>
+                        </div>
+                        {% endif %}
                     </div>
                     {% endif %}
 

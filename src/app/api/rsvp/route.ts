@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
         }
 
         // Validate required fields
-        const { attendance, name, email, phone, hasChildren, childrenCount, dietary } = body;
+        const { attendance, name, email, phone, hasChildren, childrenCount, dietary, message } = body;
 
         if (!attendance || !name || !phone) {
             return NextResponse.json(
@@ -37,6 +37,7 @@ export async function POST(request: NextRequest) {
             hasChildren: hasChildren || "non",
             childrenCount: childrenCount || "0",
             dietary: dietary || "Non",
+            message: message || "",
         };
 
         // 1. Send Admin Notification (Always)

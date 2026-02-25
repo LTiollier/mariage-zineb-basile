@@ -227,6 +227,14 @@
                             <div class="info-value">{{ params.dietary }}</div>
                         </div>
                         {% endif %}
+
+                        {% if params.message and params.message != "" %}
+                        <div class="divider"></div>
+                        <div class="info-row">
+                            <div class="info-label">Petit mot</div>
+                            <div class="info-value" style="font-style: italic;">"{{ params.message }}"</div>
+                        </div>
+                        {% endif %}
                     </div>
 
                     <!-- Summary based on attendance -->

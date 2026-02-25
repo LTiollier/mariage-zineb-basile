@@ -13,6 +13,7 @@ export default function RsvpForm() {
         hasChildren: "",
         childrenCount: "1",
         dietary: "Non",
+        message: "",
         website: "", // Honeypot field
     });
 
@@ -231,6 +232,18 @@ export default function RsvpForm() {
                                         onChange={handleChange}
                                         className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-gold bg-transparent transition-colors font-serif text-lg text-navy placeholder:text-gray-300"
                                         placeholder="06 12 34 56 78"
+                                    />
+                                </div>
+                                <div className="space-y-2 md:col-span-2">
+                                    <label htmlFor="message" className="block text-navy/80 font-sans text-sm uppercase tracking-wide">Un petit mot (facultatif)</label>
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        rows={3}
+                                        value={formData.message}
+                                        onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
+                                        className="w-full border border-gray-200 rounded-xl p-4 focus:outline-none focus:border-gold bg-transparent transition-colors font-sans text-base text-navy placeholder:text-gray-300 resize-none"
+                                        placeholder="Laissez-nous un message si vous le souhaitez..."
                                     />
                                 </div>
                             </div>
