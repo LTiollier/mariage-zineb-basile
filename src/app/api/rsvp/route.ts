@@ -64,6 +64,7 @@ export async function POST(request: NextRequest) {
 
     adminEmail.to = adminEmails.map((email) => ({ email }));
     adminEmail.templateId = 1; // Admin notification template ID
+    adminEmail.subject = `${name} ${attendance === "oui" ? "accepte" : "refuse"} l'invitation`;
     adminEmail.params = emailParams;
 
     if (adminEmails.length > 0) {
@@ -79,6 +80,10 @@ export async function POST(request: NextRequest) {
       };
       guestEmail.to = [{ email: email }];
       guestEmail.templateId = 2;
+      guestEmail.subject =
+        attendance === "oui"
+          ? "Confirmation de votre présence - Mariage Zineb & Basile"
+          : "Confirmation de votre réponse - Mariage Zineb & Basile";
       guestEmail.params = emailParams;
 
       await apiInstance.sendTransacEmail(guestEmail);
