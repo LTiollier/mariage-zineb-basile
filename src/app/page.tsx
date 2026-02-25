@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Hero from "@/components/Hero";
 import Countdown from "@/components/Countdown";
 import Program from "@/components/Program";
@@ -18,9 +19,11 @@ export default function Home() {
 
       <footer className="py-10 bg-white border-t border-gold/10 text-center flex flex-col items-center gap-4">
         <p className="text-gold font-serif text-xl">Basile & Zineb</p>
-        <img
+        <Image
           src="/zineb-basile-transparent.svg"
           alt="Basile & Zineb"
+          width={200}
+          height={80}
           className="h-20 w-auto opacity-80 hover:opacity-100 transition-opacity"
         />
         <p className="text-navy/40 text-xs font-sans mt-2 tracking-widest uppercase">
