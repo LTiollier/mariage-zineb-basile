@@ -1,13 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Castle,
-  Utensils,
-  Music,
-  Sparkles,
-  Clock,
-} from "lucide-react";
+import { Castle, Utensils, Music, Sparkles, Clock } from "lucide-react";
 
 const events = [
   {

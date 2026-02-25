@@ -7,6 +7,7 @@ Ce plan détaille les corrections apportées à la modale d'hôtels pour assurer
 ### Composants UI
 
 #### [MODIFY] [HotelModal.tsx](file:///Users/leoelmy/Projects/mariage-zineb-basile/src/components/HotelModal.tsx)
+
 - **Correction Layout** : Utilisation d'un `Portal` React pour s'assurer que la modale est rendue à la racine du `body` et ne subit pas les transformations CSS des parents (qui causent le problème de positionnement tout en bas du site).
 - **Mise à jour des données** :
   - Ajout des sites officiels et des liens Booking.com pour Villazancot, Dar Tanja, Fredj et Rembrandt.
@@ -19,6 +20,7 @@ Ce plan détaille les corrections apportées à la modale d'hôtels pour assurer
 ## Plan de Vérification
 
 ### Vérification Manuelle
+
 1. Ouvrir la modale depuis n'importe quelle position de défilement sur le site.
 2. Vérifier que la modale apparaît bien centrée dans le viewport (fenêtre) et non tout en bas de la page.
 3. Vérifier que le contenu de la modale est scrollable si nécessaire.

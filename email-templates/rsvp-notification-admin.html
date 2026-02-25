@@ -1,263 +1,270 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notification RSVP - Mariage Zineb & Basile</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', Arial, sans-serif;
-            background-color: #f9f8f6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", Arial, sans-serif;
+        background-color: #f9f8f6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
 
+      .email-wrapper {
+        width: 100%;
+        background-color: #f9f8f6;
+        padding: 40px 20px;
+      }
+
+      .email-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(26, 43, 60, 0.08);
+      }
+
+      .header {
+        background-color: #1a2b3c;
+        color: #ffffff;
+        padding: 40px 30px;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 32px;
+        font-weight: 600;
+        margin: 0 0 10px 0;
+        line-height: 1.3;
+      }
+
+      .header p {
+        font-size: 14px;
+        margin: 0;
+        opacity: 0.9;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .content {
+        padding: 40px 30px;
+        color: #1a2b3c;
+      }
+
+      .greeting {
+        font-size: 18px;
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
+
+      .greeting strong {
+        color: #c5a059;
+        font-weight: 600;
+      }
+
+      .info-section {
+        background-color: #f9f8f6;
+        border-left: 4px solid #c5a059;
+        padding: 20px 25px;
+        margin: 25px 0;
+        border-radius: 4px;
+      }
+
+      .info-section h2 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 20px;
+        margin: 0 0 15px 0;
+        color: #1a2b3c;
+      }
+
+      .info-row {
+        display: table;
+        width: 100%;
+        margin: 10px 0;
+      }
+
+      .info-label {
+        display: table-cell;
+        font-weight: 600;
+        color: #1a2b3c;
+        opacity: 0.7;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding-right: 15px;
+        width: 40%;
+      }
+
+      .info-value {
+        display: table-cell;
+        color: #1a2b3c;
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      .divider {
+        height: 1px;
+        background-color: #e8e4d8;
+        margin: 25px 0;
+      }
+
+      .message {
+        font-size: 15px;
+        line-height: 1.8;
+        color: #1a2b3c;
+        opacity: 0.9;
+        margin: 20px 0;
+      }
+
+      .footer-image {
+        width: 100%;
+        display: block;
+        margin: 0;
+        border-radius: 0 0 16px 16px;
+      }
+
+      .signature {
+        text-align: center;
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 22px;
+        color: #c5a059;
+        margin: 30px 0 20px 0;
+      }
+
+      @media only screen and (max-width: 600px) {
         .email-wrapper {
-            width: 100%;
-            background-color: #f9f8f6;
-            padding: 40px 20px;
-        }
-
-        .email-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(26, 43, 60, 0.08);
-        }
-
-        .header {
-            background-color: #1a2b3c;
-            color: #ffffff;
-            padding: 40px 30px;
-            text-align: center;
+          padding: 20px 10px;
         }
 
         .header h1 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 32px;
-            font-weight: 600;
-            margin: 0 0 10px 0;
-            line-height: 1.3;
-        }
-
-        .header p {
-            font-size: 14px;
-            margin: 0;
-            opacity: 0.9;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+          font-size: 26px;
         }
 
         .content {
-            padding: 40px 30px;
-            color: #1a2b3c;
+          padding: 30px 20px;
         }
 
-        .greeting {
-            font-size: 18px;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        .greeting strong {
-            color: #c5a059;
-            font-weight: 600;
-        }
-
-        .info-section {
-            background-color: #f9f8f6;
-            border-left: 4px solid #c5a059;
-            padding: 20px 25px;
-            margin: 25px 0;
-            border-radius: 4px;
-        }
-
-        .info-section h2 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 20px;
-            margin: 0 0 15px 0;
-            color: #1a2b3c;
-        }
-
-        .info-row {
-            display: table;
-            width: 100%;
-            margin: 10px 0;
-        }
-
-        .info-label {
-            display: table-cell;
-            font-weight: 600;
-            color: #1a2b3c;
-            opacity: 0.7;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding-right: 15px;
-            width: 40%;
-        }
-
+        .info-label,
         .info-value {
-            display: table-cell;
-            color: #1a2b3c;
-            font-size: 15px;
-            font-weight: 500;
+          display: block;
+          width: 100%;
+          padding: 5px 0;
         }
-
-        .divider {
-            height: 1px;
-            background-color: #e8e4d8;
-            margin: 25px 0;
-        }
-
-        .message {
-            font-size: 15px;
-            line-height: 1.8;
-            color: #1a2b3c;
-            opacity: 0.9;
-            margin: 20px 0;
-        }
-
-        .footer-image {
-            width: 100%;
-            display: block;
-            margin: 0;
-            border-radius: 0 0 16px 16px;
-        }
-
-        .signature {
-            text-align: center;
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 22px;
-            color: #c5a059;
-            margin: 30px 0 20px 0;
-        }
-
-        @media only screen and (max-width: 600px) {
-            .email-wrapper {
-                padding: 20px 10px;
-            }
-
-            .header h1 {
-                font-size: 26px;
-            }
-
-            .content {
-                padding: 30px 20px;
-            }
-
-            .info-label,
-            .info-value {
-                display: block;
-                width: 100%;
-                padding: 5px 0;
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="email-wrapper">
-        <table class="email-container" cellpadding="0" cellspacing="0" border="0" role="presentation">
-            <!-- Header -->
-            <tr>
-                <td class="header">
-                    <h1>Nouvelle Réponse RSVP</h1>
-                    <p>Mariage Zineb & Basile</p>
-                </td>
-            </tr>
+      <table
+        class="email-container"
+        cellpadding="0"
+        cellspacing="0"
+        border="0"
+        role="presentation"
+      >
+        <!-- Header -->
+        <tr>
+          <td class="header">
+            <h1>Nouvelle Réponse RSVP</h1>
+            <p>Mariage Zineb & Basile</p>
+          </td>
+        </tr>
 
-            <!-- Content -->
-            <tr>
-                <td class="content">
-                    <div class="greeting">
-                        Bonjour,
-                    </div>
+        <!-- Content -->
+        <tr>
+          <td class="content">
+            <div class="greeting">Bonjour,</div>
 
-                    <p class="message">
-                        Une nouvelle réponse RSVP vient d'être enregistrée pour votre mariage.
-                    </p>
+            <p class="message">
+              Une nouvelle réponse RSVP vient d'être enregistrée pour votre
+              mariage.
+            </p>
 
-                    <!-- RSVP Details -->
-                    <div class="info-section">
-                        <h2>Détails de la réponse</h2>
+            <!-- RSVP Details -->
+            <div class="info-section">
+              <h2>Détails de la réponse</h2>
 
-                        <div class="info-row">
-                            <div class="info-label">Présence</div>
-                            <div class="info-value">{{ params.attendance }}</div>
-                        </div>
+              <div class="info-row">
+                <div class="info-label">Présence</div>
+                <div class="info-value">{{ params.attendance }}</div>
+              </div>
 
-                        <div class="info-row">
-                            <div class="info-label">Nom</div>
-                            <div class="info-value">{{ params.name }}</div>
-                        </div>
+              <div class="info-row">
+                <div class="info-label">Nom</div>
+                <div class="info-value">{{ params.name }}</div>
+              </div>
 
-                        <div class="info-row">
-                            <div class="info-label">Téléphone</div>
-                            <div class="info-value">{{ params.phone }}</div>
-                        </div>
+              <div class="info-row">
+                <div class="info-label">Téléphone</div>
+                <div class="info-value">{{ params.phone }}</div>
+              </div>
 
-                        <!-- Conditional: Only if attending -->
-                        {% if params.attendance == "Oui, avec plaisir" %}
-                        <div class="divider"></div>
+              <!-- Conditional: Only if attending -->
+              {% if params.attendance == "Oui, avec plaisir" %}
+              <div class="divider"></div>
 
-                        <div class="info-row">
-                            <div class="info-label">Enfants</div>
-                            <div class="info-value">
-                                {% if params.hasChildren == "oui" %}
-                                {{ params.childrenCount }} enfant(s)
-                                {% else %}
-                                Non
-                                {% endif %}
-                            </div>
-                        </div>
+              <div class="info-row">
+                <div class="info-label">Enfants</div>
+                <div class="info-value">
+                  {% if params.hasChildren == "oui" %} {{ params.childrenCount
+                  }} enfant(s) {% else %} Non {% endif %}
+                </div>
+              </div>
 
-                        <div class="info-row">
-                            <div class="info-label">Régime alimentaire</div>
-                            <div class="info-value">{{ params.dietary }}</div>
-                        </div>
-                        {% endif %}
+              <div class="info-row">
+                <div class="info-label">Régime alimentaire</div>
+                <div class="info-value">{{ params.dietary }}</div>
+              </div>
+              {% endif %} {% if params.message and params.message != "" %}
+              <div class="divider"></div>
+              <div class="info-row">
+                <div class="info-label">Petit mot</div>
+                <div class="info-value" style="font-style: italic">
+                  "{{ params.message }}"
+                </div>
+              </div>
+              {% endif %}
+            </div>
 
-                        {% if params.message and params.message != "" %}
-                        <div class="divider"></div>
-                        <div class="info-row">
-                            <div class="info-label">Petit mot</div>
-                            <div class="info-value" style="font-style: italic;">"{{ params.message }}"</div>
-                        </div>
-                        {% endif %}
-                    </div>
+            <!-- Summary based on attendance -->
+            {% if params.attendance == "Oui, avec plaisir" %}
+            <p class="message">
+              ✅ <strong>{{ params.name }}</strong> sera présent(e) à votre
+              mariage.
+            </p>
+            {% else %}
+            <p class="message">
+              ❌ <strong>{{ params.name }}</strong> ne pourra malheureusement
+              pas être présent(e).
+            </p>
+            {% endif %}
+          </td>
+        </tr>
 
-                    <!-- Summary based on attendance -->
-                    {% if params.attendance == "Oui, avec plaisir" %}
-                    <p class="message">
-                        ✅ <strong>{{ params.name }}</strong> sera présent(e) à votre mariage.
-                    </p>
-                    {% else %}
-                    <p class="message">
-                        ❌ <strong>{{ params.name }}</strong> ne pourra malheureusement pas être présent(e).
-                    </p>
-                    {% endif %}
-                </td>
-            </tr>
-
-            <!-- Footer Image -->
-            <tr>
-                <td style="padding: 0;">
-                    <img src="https://basilexzineb.vercel.app/hero_palais.webp" alt="Palais" class="footer-image">
-                </td>
-            </tr>
-        </table>
+        <!-- Footer Image -->
+        <tr>
+          <td style="padding: 0">
+            <img
+              src="https://basilexzineb.vercel.app/hero_palais.webp"
+              alt="Palais"
+              class="footer-image"
+            />
+          </td>
+        </tr>
+      </table>
     </div>
-</body>
-
+  </body>
 </html>

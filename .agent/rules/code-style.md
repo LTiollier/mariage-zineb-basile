@@ -52,31 +52,34 @@ The wedding will take place on **October 10, 2026**, at **Palais Tazi, Maroc**.
 Use emojis to prefix commit messages to categorize intentions clearly.
 
 ### Message Format
+
 `<emoji> [scope?] : <description>`
 Example: `✨ feat(auth): add login logic`
 
 ### Core Gitmoji List
-| Emoji | Code | Intent |
-| :--- | :--- | :--- |
-| ✨ | `:sparkles:` | New features |
-| 🐛 | `:bug:` | Bug fixes |
-| ♻️ | `:recycle:` | Refactoring code |
-| ⚡️ | `:zap:` | Performance improvements |
-| 💄 | `:lipstick:` | UI/Style/Assets changes |
-| 📝 | `:memo:` | Documentation |
-| ✅ | `:white_check_mark:` | Tests (add, update, pass) |
-| 🔥 | `:fire:` | Removing code or files |
-| 🚑️ | `:ambulance:` | Critical hotfix |
-| 🔧 | `:wrench:` | Configuration/Build scripts |
-| 📦️ | `:package:` | Dependencies |
-| 🚀 | `:rocket:` | Deployment |
-| 🧪 | `:test_tube:` | Adding a failing test |
-| 💥 | `:boom:` | Breaking changes |
-| 🚧 | `:construction:` | Work in progress (WIP) |
-| 🚨 | `:rotating_light:` | Fixing compiler/linter warnings |
-| 🎨 | `:art:` | Improving structure/format of code |
+
+| Emoji | Code                 | Intent                             |
+| :---- | :------------------- | :--------------------------------- |
+| ✨    | `:sparkles:`         | New features                       |
+| 🐛    | `:bug:`              | Bug fixes                          |
+| ♻️    | `:recycle:`          | Refactoring code                   |
+| ⚡️    | `:zap:`              | Performance improvements           |
+| 💄    | `:lipstick:`         | UI/Style/Assets changes            |
+| 📝    | `:memo:`             | Documentation                      |
+| ✅    | `:white_check_mark:` | Tests (add, update, pass)          |
+| 🔥    | `:fire:`             | Removing code or files             |
+| 🚑️    | `:ambulance:`        | Critical hotfix                    |
+| 🔧    | `:wrench:`           | Configuration/Build scripts        |
+| 📦️    | `:package:`          | Dependencies                       |
+| 🚀    | `:rocket:`           | Deployment                         |
+| 🧪    | `:test_tube:`        | Adding a failing test              |
+| 💥    | `:boom:`             | Breaking changes                   |
+| 🚧    | `:construction:`     | Work in progress (WIP)             |
+| 🚨    | `:rotating_light:`   | Fixing compiler/linter warnings    |
+| 🎨    | `:art:`              | Improving structure/format of code |
 
 ### AI Guidelines
+
 1. **Atomicity:** One emoji per commit. Split changes if they serve multiple purposes.
 2. **Format:** Use Unicode emojis (✨) directly in the title.
 3. **Style:** - Use imperative mood (e.g., `add` instead of `added`).

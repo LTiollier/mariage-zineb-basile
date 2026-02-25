@@ -1,21 +1,21 @@
 {
-    "name": "Mariage Basile & Zineb",
-    "short_name": "Mariage B&Z",
-    "description": "Invitation au mariage de Basile Piquard et Zineb Lahjouji",
-    "start_url": "/",
-    "display": "standalone",
-    "background_color": "#fdfcf8",
-    "theme_color": "#c5a059",
-    "icons": [
-        {
-            "src": "/zineb-basile-transparent.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/zineb-basile-transparent.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ]
+  "name": "Mariage Basile & Zineb",
+  "short_name": "Mariage B&Z",
+  "description": "Invitation au mariage de Basile Piquard et Zineb Lahjouji",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fdfcf8",
+  "theme_color": "#c5a059",
+  "icons": [
+    {
+      "src": "/zineb-basile-transparent.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/zineb-basile-transparent.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }

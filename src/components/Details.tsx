@@ -28,10 +28,12 @@ export default function Details() {
             title="Dress Code"
             content={
               <>
-                Nous serions ravis de vous voir dans vos plus beaux atours. Caftan ou robe pour les dames, costume pour les messieurs.
+                Nous serions ravis de vous voir dans vos plus beaux atours.
+                Caftan ou robe pour les dames, costume pour les messieurs.
                 <br />
                 <span className="text-[10px] sm:text-xs  mt-2 block opacity-80">
-                  (Envie d’oser la tenue traditionnelle ? Nous serions heureux de vous guider.)
+                  (Envie d’oser la tenue traditionnelle ? Nous serions heureux
+                  de vous guider.)
                 </span>
               </>
             }

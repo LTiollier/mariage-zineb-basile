@@ -17,12 +17,14 @@ export const metadata: Metadata = {
   description:
     "Invitation au mariage de Zineb Lahjouji et Basile Piquard - 10 Octobre 2026",
   icons: {
-    icon: [
-      { url: "/zineb-basile-transparent.svg", type: "image/svg+xml" },
-    ],
+    icon: [{ url: "/zineb-basile-transparent.svg", type: "image/svg+xml" }],
     shortcut: "/zineb-basile-transparent.png",
     apple: [
-      { url: "/zineb-basile-transparent.png", sizes: "180x180", type: "image/png" },
+      {
+        url: "/zineb-basile-transparent.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
     ],
   },
   manifest: "/manifest.json",
@@ -34,7 +36,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Mariage de Basile & Zineb",
-    description: "Invitation au mariage de Basile Piquard et Zineb Lahjouji - 10 Octobre 2026",
+    description:
+      "Invitation au mariage de Basile Piquard et Zineb Lahjouji - 10 Octobre 2026",
     images: [
       {
         url: "/zineb-basile-transparent.png",
@@ -49,7 +52,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Mariage de Basile & Zineb",
-    description: "Invitation au mariage de Basile Piquard et Zineb Lahjouji - 10 Octobre 2026",
+    description:
+      "Invitation au mariage de Basile Piquard et Zineb Lahjouji - 10 Octobre 2026",
     images: ["/zineb-basile-transparent.png"],
   },
   robots: {
