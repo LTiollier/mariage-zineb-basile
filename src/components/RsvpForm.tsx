@@ -71,7 +71,7 @@ export default function RsvpForm() {
                         Confirmez votre présence
                     </h2>
                     <p className="font-sans text-lg text-navy/60 max-w-xl mx-auto">
-                        Merci de confirmer votre présence d’ici le 31 mai
+                        Merci de nous faire part de votre réponse avant le 31 mai
                     </p>
                 </div>
 
@@ -343,7 +343,7 @@ export default function RsvpForm() {
                                             Envoi en cours...
                                         </>
                                     ) : (
-                                        "Confirmer ma réponse"
+                                        "Envoyer"
                                     )}
                                 </button>
                             </div>

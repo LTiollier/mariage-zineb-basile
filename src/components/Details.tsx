@@ -18,7 +18,7 @@ export default function Details() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-serif  text-gold">
-            Informations Utiles
+            Informations utiles
           </h2>
         </motion.div>
 
@@ -28,10 +28,10 @@ export default function Details() {
             title="Dress Code"
             content={
               <>
-                Nous serions ravis de vous voir dans vos plus beaux atours. Tenue festive ou traditionnelle (Caftan ou robe longue pour les dames, Jabador ou costume pour les messieurs).
+                Nous serions ravis de vous voir dans vos plus beaux atours. Caftan ou robe pour les dames, costume pour les messieurs.
                 <br />
                 <span className="text-[10px] sm:text-xs  mt-2 block opacity-80">
-                  (Si vous avez envie d’oser la tenue traditionnelle, n’hésitez pas à nous demander conseil)
+                  (Envie d’oser la tenue traditionnelle ? Nous serions heureux de vous guider.)
                 </span>
               </>
             }

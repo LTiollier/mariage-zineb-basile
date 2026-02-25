@@ -45,15 +45,19 @@ export async function POST(request: NextRequest) {
             email: process.env.BREVO_SENDER_EMAIL || "",
             name: process.env.BREVO_SENDER_NAME || "Mariage Basile & Zineb",
         };
-        adminEmail.to = [
-            {
-                email: process.env.BREVO_RECIPIENT_EMAIL || "",
-            },
-        ];
+
+        const adminEmails = (process.env.BREVO_ADMIN_EMAILS || process.env.BREVO_RECIPIENT_EMAIL || "")
+            .split(",")
+            .map(email => email.trim())
+            .filter(email => email !== "");
+
+        adminEmail.to = adminEmails.map(email => ({ email }));
         adminEmail.templateId = 1; // Admin notification template ID
         adminEmail.params = emailParams;
 
-        await apiInstance.sendTransacEmail(adminEmail);
+        if (adminEmails.length > 0) {
+            await apiInstance.sendTransacEmail(adminEmail);
+        }
 
         // 2. Send Guest Confirmation (Only if email provided)
         if (email && email.trim() !== "") {
