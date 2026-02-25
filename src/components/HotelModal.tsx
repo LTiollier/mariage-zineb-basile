@@ -153,7 +153,7 @@ export default function HotelModal({
                     className="bg-white rounded-2xl border border-gold/5 shadow-sm hover:shadow-md transition-shadow group overflow-hidden flex flex-col sm:flex-row h-full min-w-0"
                   >
                     {/* Image Section */}
-                    <div className="relative w-full sm:w-1/3 min-h-[160px] sm:min-h-full shrink-0">
+                    <div className="relative w-full sm:w-2/5 min-h-[180px] sm:min-h-full shrink-0">
                       <Image
                         src={hotel.image}
                         alt={hotel.name}
@@ -166,7 +166,7 @@ export default function HotelModal({
                     </div>
 
                     {/* Content Section */}
-                    <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between min-w-0">
+                    <div className="p-5 sm:p-7 flex-1 flex flex-col justify-between min-w-0">
                       <div>
                         <div className="flex justify-between items-start mb-2">
                           <div>
@@ -190,7 +190,7 @@ export default function HotelModal({
                           </div>
                         </div>
 
-                        <p className="text-navy/70 text-xs leading-relaxed font-sans mb-6 line-clamp-3">
+                        <p className="text-navy/70 text-xs leading-relaxed font-sans mb-8">
                           {hotel.highlight}
                         </p>
                       </div>
