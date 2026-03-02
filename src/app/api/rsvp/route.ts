@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
       message,
     } = body;
 
-    if (!attendance || !name || !phone) {
+    if (!attendance || !name) {
       return NextResponse.json(
         { error: "Missing required fields" },
         { status: 400 },
@@ -38,14 +38,13 @@ export async function POST(request: NextRequest) {
 
     const emailParams = {
       name,
-      phone,
+      phone: phone || "",
       attendance: attendance === "oui" ? "Oui, avec plaisir" : "Non, désolé",
       hasChildren: hasChildren || "non",
       childrenCount: childrenCount || "0",
       dietary: dietary || "Non",
       message: message || "",
     };
-
     // 1. Send Admin Notification (Always)
     const adminEmail = new brevo.SendSmtpEmail();
     adminEmail.sender = {
@@ -70,7 +69,6 @@ export async function POST(request: NextRequest) {
     if (adminEmails.length > 0) {
       await apiInstance.sendTransacEmail(adminEmail);
     }
-
     // 2. Send Guest Confirmation (Only if email provided)
     if (email && email.trim() !== "") {
       const guestEmail = new brevo.SendSmtpEmail();
@@ -85,7 +83,6 @@ export async function POST(request: NextRequest) {
           ? "Confirmation de votre présence - Mariage Zineb & Basile"
           : "Confirmation de votre réponse - Mariage Zineb & Basile";
       guestEmail.params = emailParams;
-
       await apiInstance.sendTransacEmail(guestEmail);
     }
 
