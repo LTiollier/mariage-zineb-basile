@@ -59,13 +59,13 @@ export default function RsvpForm() {
   // Confetti particles for success state
   const particles = isSubmitted
     ? Array.from({ length: 30 }).map((_, i) => ({
-        id: i,
-        angle: (i * 360) / 30,
-        distance: 60 + Math.random() * 40,
-        size: 4 + Math.random() * 4,
-        color: ["#c5a059", "#8b7346", "#e5d5b0"][Math.floor(Math.random() * 3)],
-        delay: Math.random() * 0.2,
-      }))
+      id: i,
+      angle: (i * 360) / 30,
+      distance: 60 + Math.random() * 40,
+      size: 4 + Math.random() * 4,
+      color: ["#c5a059", "#8b7346", "#e5d5b0"][Math.floor(Math.random() * 3)],
+      delay: Math.random() * 0.2,
+    }))
     : [];
 
   return (
@@ -272,33 +272,10 @@ export default function RsvpForm() {
                     type="tel"
                     id="phone"
                     name="phone"
-                    required
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-gold bg-transparent transition-colors font-serif text-lg text-navy placeholder:text-gray-300"
-                    placeholder="06 12 34 56 78"
-                  />
-                </div>
-                <div className="space-y-2 md:col-span-2">
-                  <label
-                    htmlFor="message"
-                    className="block text-navy/80 font-sans text-sm uppercase tracking-wide"
-                  >
-                    Un petit mot (facultatif)
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={3}
-                    value={formData.message}
-                    onChange={(e) =>
-                      setFormData((prev) => ({
-                        ...prev,
-                        message: e.target.value,
-                      }))
-                    }
-                    className="w-full border border-gray-200 rounded-xl p-4 focus:outline-none focus:border-gold bg-transparent transition-colors font-sans text-base text-navy placeholder:text-gray-300 resize-none"
-                    placeholder="Laissez-nous un message si vous le souhaitez..."
+                    placeholder="06 12 34 56 78 (optionnel)"
                   />
                 </div>
               </div>
@@ -410,7 +387,28 @@ export default function RsvpForm() {
                   </motion.div>
                 )}
               </AnimatePresence>
-
+              <div className="space-y-2 md:col-span-2">
+                <label
+                  htmlFor="message"
+                  className="block text-navy/80 font-sans text-sm uppercase tracking-wide"
+                >
+                  Un petit mot
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={3}
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      message: e.target.value,
+                    }))
+                  }
+                  className="w-full border border-gray-200 rounded-xl p-4 focus:outline-none focus:border-gold bg-transparent transition-colors font-sans text-base text-navy placeholder:text-gray-300 resize-none"
+                  placeholder="Laissez-nous un message si vous le souhaitez..."
+                />
+              </div>
               <div className="pt-6">
                 <button
                   type="submit"
