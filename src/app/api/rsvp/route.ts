@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
 
     const emailParams = {
       name,
-      phone: phone || "",
+      phone: phone || "",
       attendance: attendance === "oui" ? "Oui, avec plaisir" : "Non, désolé",
       hasChildren: hasChildren || "non",
       childrenCount: childrenCount || "0",

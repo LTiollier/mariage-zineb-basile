@@ -59,13 +59,13 @@ export default function RsvpForm() {
   // Confetti particles for success state
   const particles = isSubmitted
     ? Array.from({ length: 30 }).map((_, i) => ({
-      id: i,
-      angle: (i * 360) / 30,
-      distance: 60 + Math.random() * 40,
-      size: 4 + Math.random() * 4,
-      color: ["#c5a059", "#8b7346", "#e5d5b0"][Math.floor(Math.random() * 3)],
-      delay: Math.random() * 0.2,
-    }))
+        id: i,
+        angle: (i * 360) / 30,
+        distance: 60 + Math.random() * 40,
+        size: 4 + Math.random() * 4,
+        color: ["#c5a059", "#8b7346", "#e5d5b0"][Math.floor(Math.random() * 3)],
+        delay: Math.random() * 0.2,
+      }))
     : [];
 
   return (
